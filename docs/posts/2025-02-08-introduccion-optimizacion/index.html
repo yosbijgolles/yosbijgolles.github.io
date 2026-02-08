@@ -8,8 +8,9 @@
 
 <meta name="author" content="Yosbi J. Golles">
 <meta name="dcterms.date" content="2025-02-08">
+<meta name="description" content="Una introducción a los conceptos fundamentales de optimización matemática y operations research">
 
-<title>Bienvenida a mi blog de optimización – Inteligencia Especializada</title>
+<title>Introducción a la Optimización Matemática – Inteligencia Especializada</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -204,13 +205,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
-  <li><a href="#qué-encontrarás-aquí" id="toc-qué-encontrarás-aquí" class="nav-link" data-scroll-target="#qué-encontrarás-aquí">¿Qué encontrarás aquí?</a>
+  <li><a href="#qué-es-la-optimización-matemática" id="toc-qué-es-la-optimización-matemática" class="nav-link active" data-scroll-target="#qué-es-la-optimización-matemática">¿Qué es la Optimización Matemática?</a></li>
+  <li><a href="#componentes-de-un-problema-de-optimización" id="toc-componentes-de-un-problema-de-optimización" class="nav-link" data-scroll-target="#componentes-de-un-problema-de-optimización">Componentes de un Problema de Optimización</a></li>
+  <li><a href="#ejemplo-clásico-programación-lineal" id="toc-ejemplo-clásico-programación-lineal" class="nav-link" data-scroll-target="#ejemplo-clásico-programación-lineal">Ejemplo Clásico: Programación Lineal</a>
   <ul class="collapse">
-  <li><a href="#temas-principales" id="toc-temas-principales" class="nav-link" data-scroll-target="#temas-principales">Temas principales:</a></li>
+  <li><a href="#formulación-matemática" id="toc-formulación-matemática" class="nav-link" data-scroll-target="#formulación-matemática">Formulación Matemática</a></li>
   </ul></li>
-  <li><a href="#código-de-ejemplo" id="toc-código-de-ejemplo" class="nav-link" data-scroll-target="#código-de-ejemplo">Código de ejemplo</a></li>
-  <li><a href="#fórmulas-matemáticas" id="toc-fórmulas-matemáticas" class="nav-link" data-scroll-target="#fórmulas-matemáticas">Fórmulas matemáticas</a></li>
+  <li><a href="#resolución-con-python" id="toc-resolución-con-python" class="nav-link" data-scroll-target="#resolución-con-python">Resolución con Python</a></li>
+  <li><a href="#tipos-de-problemas-de-optimización" id="toc-tipos-de-problemas-de-optimización" class="nav-link" data-scroll-target="#tipos-de-problemas-de-optimización">Tipos de Problemas de Optimización</a></li>
+  <li><a href="#próximos-posts" id="toc-próximos-posts" class="nav-link" data-scroll-target="#próximos-posts">Próximos Posts</a></li>
   </ul>
 </nav>
     </div>
@@ -219,13 +222,18 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Bienvenida a mi blog de optimización</h1>
+<h1 class="title">Introducción a la Optimización Matemática</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">general</div>
     <div class="quarto-category">optimización</div>
+    <div class="quarto-category">introducción</div>
   </div>
   </div>
 
+<div>
+  <div class="description">
+    Una introducción a los conceptos fundamentales de optimización matemática y operations research
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -252,37 +260,50 @@ window.Quarto = {
 </header>
 
 
-<section id="introducción" class="level2">
-<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
-<p>Bienvenido a mi blog sobre optimización matemática y operations research.</p>
-<p>En este espacio compartiré:</p>
+<section id="qué-es-la-optimización-matemática" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-la-optimización-matemática">¿Qué es la Optimización Matemática?</h2>
+<p>La optimización matemática es el proceso de encontrar la mejor solución posible a un problema, sujeto a ciertas restricciones. Es una herramienta fundamental en Operations Research y tiene aplicaciones en logística, finanzas, manufactura, y muchos otros campos.</p>
+</section>
+<section id="componentes-de-un-problema-de-optimización" class="level2">
+<h2 class="anchored" data-anchor-id="componentes-de-un-problema-de-optimización">Componentes de un Problema de Optimización</h2>
+<p>Todo problema de optimización tiene tres elementos clave:</p>
+<p><strong>1. Variables de decisión</strong>: Las cantidades que queremos determinar</p>
+<p><strong>2. Función objetivo</strong>: Lo que queremos maximizar o minimizar</p>
+<p><strong>3. Restricciones</strong>: Las limitaciones que debemos respetar</p>
+</section>
+<section id="ejemplo-clásico-programación-lineal" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-clásico-programación-lineal">Ejemplo Clásico: Programación Lineal</h2>
+<p>Supongamos que una empresa fabrica dos productos: A y B.</p>
 <ul>
-<li>Tutoriales sobre algoritmos de optimización</li>
-<li>Explicaciones de mis proyectos en GitHub</li>
-<li>Análisis de problemas reales (VRP, scheduling, etc.)</li>
-<li>Recursos y referencias útiles</li>
+<li>Producto A genera $3 de ganancia</li>
+<li>Producto B genera $4 de ganancia</li>
+<li>Hay limitaciones de recursos (materias primas, tiempo de máquina)</li>
 </ul>
+<p>Queremos <strong>maximizar las ganancias</strong> respetando las restricciones.</p>
+<section id="formulación-matemática" class="level3">
+<h3 class="anchored" data-anchor-id="formulación-matemática">Formulación Matemática</h3>
+<p><strong>Variables de decisión:</strong> - <span class="math inline">\(x\)</span> = unidades del producto A - <span class="math inline">\(y\)</span> = unidades del producto B</p>
+<p><strong>Función objetivo:</strong></p>
+<p><span class="math display">\[
+\max \quad z = 3x + 4y
+\]</span></p>
+<p><strong>Restricciones:</strong></p>
+<p><span class="math display">\[
+\begin{align}
+x + 2y &amp;\leq 14 \quad \text{(restricción de material)} \\
+3x - y &amp;\geq 0 \quad \text{(restricción técnica)} \\
+x, y &amp;\geq 0 \quad \text{(no negatividad)}
+\end{align}
+\]</span></p>
 </section>
-<section id="qué-encontrarás-aquí" class="level2">
-<h2 class="anchored" data-anchor-id="qué-encontrarás-aquí">¿Qué encontrarás aquí?</h2>
-<p>Este blog complementa mi canal de YouTube donde explico conceptos de optimización de forma visual y práctica.</p>
-<section id="temas-principales" class="level3">
-<h3 class="anchored" data-anchor-id="temas-principales">Temas principales:</h3>
-<ul>
-<li><strong>Programación Lineal y Entera</strong>: Formulaciones matemáticas y aplicaciones</li>
-<li><strong>Vehicle Routing Problem</strong>: Mi especialidad de investigación</li>
-<li><strong>Metaheurísticas</strong>: Algoritmos aproximados para problemas complejos</li>
-<li><strong>Herramientas</strong>: Python (OR-Tools, PuLP), AMPL, R</li>
-</ul>
 </section>
-</section>
-<section id="código-de-ejemplo" class="level2">
-<h2 class="anchored" data-anchor-id="código-de-ejemplo">Código de ejemplo</h2>
-<p>Aquí puedes incluir código que se renderizará con syntax highlighting:</p>
+<section id="resolución-con-python" class="level2">
+<h2 class="anchored" data-anchor-id="resolución-con-python">Resolución con Python</h2>
+<p>Podemos resolver este problema usando OR-Tools:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ortools.linear_solver <span class="im">import</span> pywraplp</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear el solver</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>solver <span class="op">=</span> pywraplp.Solver.CreateSolver(<span class="st">'SCIP'</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>solver <span class="op">=</span> pywraplp.Solver.CreateSolver(<span class="st">'GLOP'</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables de decisión</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> solver.NumVar(<span class="dv">0</span>, solver.infinity(), <span class="st">'x'</span>)</span>
@@ -297,20 +318,40 @@ window.Quarto = {
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Resolver</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>status <span class="op">=</span> solver.Solve()</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Solución óptima: x=</span><span class="sc">{</span>x<span class="sc">.</span>solution_value()<span class="sc">}</span><span class="ss">, y=</span><span class="sc">{</span>y<span class="sc">.</span>solution_value()<span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> status <span class="op">==</span> pywraplp.Solver.OPTIMAL:</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Solución óptima encontrada:'</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'x = </span><span class="sc">{</span>x<span class="sc">.</span>solution_value()<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'y = </span><span class="sc">{</span>y<span class="sc">.</span>solution_value()<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Ganancia máxima = $</span><span class="sc">{</span>solver<span class="sc">.</span>Objective()<span class="sc">.</span>Value()<span class="sc">:.2f}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Salida:</strong></p>
+<pre><code>Solución óptima encontrada:
+x = 2.00
+y = 6.00
+Ganancia máxima = $30.00</code></pre>
 </section>
-<section id="fórmulas-matemáticas" class="level2">
-<h2 class="anchored" data-anchor-id="fórmulas-matemáticas">Fórmulas matemáticas</h2>
-<p>También puedo incluir LaTeX para ecuaciones:</p>
-<p><span class="math display">\[
-\min \sum_{i,j} c_{ij} x_{ij}
-\]</span></p>
-<p>Sujeto a:</p>
-<p><span class="math display">\[
-\sum_{j} x_{ij} = 1, \quad \forall i \in C
-\]</span></p>
+<section id="tipos-de-problemas-de-optimización" class="level2">
+<h2 class="anchored" data-anchor-id="tipos-de-problemas-de-optimización">Tipos de Problemas de Optimización</h2>
+<p>En este blog exploraremos diferentes tipos:</p>
+<ul>
+<li><strong>Programación Lineal (LP)</strong>: Función objetivo y restricciones lineales</li>
+<li><strong>Programación Entera (IP/MIP)</strong>: Variables que deben ser enteros</li>
+<li><strong>Problemas de Ruteo (VRP)</strong>: Optimización de rutas de vehículos</li>
+<li><strong>Scheduling</strong>: Asignación óptima de recursos en el tiempo</li>
+<li><strong>Metaheurísticas</strong>: Algoritmos aproximados para problemas complejos</li>
+</ul>
+</section>
+<section id="próximos-posts" class="level2">
+<h2 class="anchored" data-anchor-id="próximos-posts">Próximos Posts</h2>
+<p>En futuros artículos profundizaré en:</p>
+<ol type="1">
+<li>Vehicle Routing Problem (VRP) - mi área de investigación</li>
+<li>Optimización de horarios universitarios</li>
+<li>Algoritmos genéticos y metaheurísticas</li>
+<li>Uso avanzado de AMPL y Python</li>
+</ol>
 <hr>
-<p>¡Gracias por visitar! Sígueme en <a href="https://github.com/yosbijgolles">GitHub</a> y suscríbete al canal de YouTube.</p>
+<p>¿Tienes preguntas sobre optimización? Escríbeme en <a href="https://github.com/yosbijgolles">GitHub</a> o comenta en el video de YouTube cuando lo publique.</p>
 
 
 </section>

@@ -16,5 +16,8 @@
   },
   "blog.qmd": {
     "blog.html": "8c4e106c"
+  },
+  "posts/2025-02-08-introduccion-optimizacion/index.qmd": {
+    "index.html": "3df3f251"
   }
 }

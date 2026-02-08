@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Artículos sobre optimización matemática, algoritmos y aplicaciones en operations research.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBienvenida a mi blog de optimización\n\n\n\ngeneral\n\noptimización\n\n\n\n\n\n\n\n\n\nFeb 8, 2025\n\n\nYosbi J. Golles\n\n\n\n\n\nNo matching items"
+    "text": "Artículos sobre optimización matemática, algoritmos y aplicaciones en operations research.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntroducción a la Optimización Matemática\n\n\n\noptimización\n\nintroducción\n\n\n\nUna introducción a los conceptos fundamentales de optimización matemática y operations research\n\n\n\n\n\nFeb 8, 2025\n\n\nYosbi J. Golles\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "videos.html",
@@ -25,7 +25,7 @@
     "href": "index.html",
     "title": "Inteligencia Especializada",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "bla bla bla"
   },
   {
     "objectID": "about.html",
@@ -35,39 +35,53 @@
     "text": "About this site"
   },
   {
-    "objectID": "posts/2025-02-08-bienvenida/index.html",
-    "href": "posts/2025-02-08-bienvenida/index.html",
-    "title": "Bienvenida a mi blog de optimización",
+    "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html",
+    "href": "posts/2025-02-08-introduccion-optimizacion/index.html",
+    "title": "Introducción a la Optimización Matemática",
     "section": "",
-    "text": "Bienvenido a mi blog sobre optimización matemática y operations research.\nEn este espacio compartiré:\n\nTutoriales sobre algoritmos de optimización\nExplicaciones de mis proyectos en GitHub\nAnálisis de problemas reales (VRP, scheduling, etc.)\nRecursos y referencias útiles"
+    "text": "La optimización matemática es el proceso de encontrar la mejor solución posible a un problema, sujeto a ciertas restricciones. Es una herramienta fundamental en Operations Research y tiene aplicaciones en logística, finanzas, manufactura, y muchos otros campos."
   },
   {
-    "objectID": "posts/2025-02-08-bienvenida/index.html#introducción",
-    "href": "posts/2025-02-08-bienvenida/index.html#introducción",
-    "title": "Bienvenida a mi blog de optimización",
+    "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html#qué-es-la-optimización-matemática",
+    "href": "posts/2025-02-08-introduccion-optimizacion/index.html#qué-es-la-optimización-matemática",
+    "title": "Introducción a la Optimización Matemática",
     "section": "",
-    "text": "Bienvenido a mi blog sobre optimización matemática y operations research.\nEn este espacio compartiré:\n\nTutoriales sobre algoritmos de optimización\nExplicaciones de mis proyectos en GitHub\nAnálisis de problemas reales (VRP, scheduling, etc.)\nRecursos y referencias útiles"
+    "text": "La optimización matemática es el proceso de encontrar la mejor solución posible a un problema, sujeto a ciertas restricciones. Es una herramienta fundamental en Operations Research y tiene aplicaciones en logística, finanzas, manufactura, y muchos otros campos."
   },
   {
-    "objectID": "posts/2025-02-08-bienvenida/index.html#qué-encontrarás-aquí",
-    "href": "posts/2025-02-08-bienvenida/index.html#qué-encontrarás-aquí",
-    "title": "Bienvenida a mi blog de optimización",
-    "section": "¿Qué encontrarás aquí?",
-    "text": "¿Qué encontrarás aquí?\nEste blog complementa mi canal de YouTube donde explico conceptos de optimización de forma visual y práctica.\n\nTemas principales:\n\nProgramación Lineal y Entera: Formulaciones matemáticas y aplicaciones\nVehicle Routing Problem: Mi especialidad de investigación\nMetaheurísticas: Algoritmos aproximados para problemas complejos\nHerramientas: Python (OR-Tools, PuLP), AMPL, R"
+    "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html#componentes-de-un-problema-de-optimización",
+    "href": "posts/2025-02-08-introduccion-optimizacion/index.html#componentes-de-un-problema-de-optimización",
+    "title": "Introducción a la Optimización Matemática",
+    "section": "Componentes de un Problema de Optimización",
+    "text": "Componentes de un Problema de Optimización\nTodo problema de optimización tiene tres elementos clave:\n1. Variables de decisión: Las cantidades que queremos determinar\n2. Función objetivo: Lo que queremos maximizar o minimizar\n3. Restricciones: Las limitaciones que debemos respetar"
   },
   {
-    "objectID": "posts/2025-02-08-bienvenida/index.html#código-de-ejemplo",
-    "href": "posts/2025-02-08-bienvenida/index.html#código-de-ejemplo",
-    "title": "Bienvenida a mi blog de optimización",
-    "section": "Código de ejemplo",
-    "text": "Código de ejemplo\nAquí puedes incluir código que se renderizará con syntax highlighting:\nfrom ortools.linear_solver import pywraplp\n\n# Crear el solver\nsolver = pywraplp.Solver.CreateSolver('SCIP')\n\n# Variables de decisión\nx = solver.NumVar(0, solver.infinity(), 'x')\ny = solver.NumVar(0, solver.infinity(), 'y')\n\n# Función objetivo: maximizar 3x + 4y\nsolver.Maximize(3*x + 4*y)\n\n# Restricciones\nsolver.Add(x + 2*y &lt;= 14)\nsolver.Add(3*x - y &gt;= 0)\n\n# Resolver\nstatus = solver.Solve()\nprint(f'Solución óptima: x={x.solution_value()}, y={y.solution_value()}')"
+    "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html#ejemplo-clásico-programación-lineal",
+    "href": "posts/2025-02-08-introduccion-optimizacion/index.html#ejemplo-clásico-programación-lineal",
+    "title": "Introducción a la Optimización Matemática",
+    "section": "Ejemplo Clásico: Programación Lineal",
+    "text": "Ejemplo Clásico: Programación Lineal\nSupongamos que una empresa fabrica dos productos: A y B.\n\nProducto A genera $3 de ganancia\nProducto B genera $4 de ganancia\nHay limitaciones de recursos (materias primas, tiempo de máquina)\n\nQueremos maximizar las ganancias respetando las restricciones.\n\nFormulación Matemática\nVariables de decisión: - \\(x\\) = unidades del producto A - \\(y\\) = unidades del producto B\nFunción objetivo:\n\\[\n\\max \\quad z = 3x + 4y\n\\]\nRestricciones:\n\\[\n\\begin{align}\nx + 2y &\\leq 14 \\quad \\text{(restricción de material)} \\\\\n3x - y &\\geq 0 \\quad \\text{(restricción técnica)} \\\\\nx, y &\\geq 0 \\quad \\text{(no negatividad)}\n\\end{align}\n\\]"
   },
   {
-    "objectID": "posts/2025-02-08-bienvenida/index.html#fórmulas-matemáticas",
-    "href": "posts/2025-02-08-bienvenida/index.html#fórmulas-matemáticas",
-    "title": "Bienvenida a mi blog de optimización",
-    "section": "Fórmulas matemáticas",
-    "text": "Fórmulas matemáticas\nTambién puedo incluir LaTeX para ecuaciones:\n\\[\n\\min \\sum_{i,j} c_{ij} x_{ij}\n\\]\nSujeto a:\n\\[\n\\sum_{j} x_{ij} = 1, \\quad \\forall i \\in C\n\\]\n\n¡Gracias por visitar! Sígueme en GitHub y suscríbete al canal de YouTube."
+    "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html#resolución-con-python",
+    "href": "posts/2025-02-08-introduccion-optimizacion/index.html#resolución-con-python",
+    "title": "Introducción a la Optimización Matemática",
+    "section": "Resolución con Python",
+    "text": "Resolución con Python\nPodemos resolver este problema usando OR-Tools:\nfrom ortools.linear_solver import pywraplp\n\n# Crear el solver\nsolver = pywraplp.Solver.CreateSolver('GLOP')\n\n# Variables de decisión\nx = solver.NumVar(0, solver.infinity(), 'x')\ny = solver.NumVar(0, solver.infinity(), 'y')\n\n# Función objetivo: maximizar 3x + 4y\nsolver.Maximize(3*x + 4*y)\n\n# Restricciones\nsolver.Add(x + 2*y &lt;= 14)\nsolver.Add(3*x - y &gt;= 0)\n\n# Resolver\nstatus = solver.Solve()\n\nif status == pywraplp.Solver.OPTIMAL:\n    print(f'Solución óptima encontrada:')\n    print(f'x = {x.solution_value():.2f}')\n    print(f'y = {y.solution_value():.2f}')\n    print(f'Ganancia máxima = ${solver.Objective().Value():.2f}')\nSalida:\nSolución óptima encontrada:\nx = 2.00\ny = 6.00\nGanancia máxima = $30.00"
+  },
+  {
+    "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html#tipos-de-problemas-de-optimización",
+    "href": "posts/2025-02-08-introduccion-optimizacion/index.html#tipos-de-problemas-de-optimización",
+    "title": "Introducción a la Optimización Matemática",
+    "section": "Tipos de Problemas de Optimización",
+    "text": "Tipos de Problemas de Optimización\nEn este blog exploraremos diferentes tipos:\n\nProgramación Lineal (LP): Función objetivo y restricciones lineales\nProgramación Entera (IP/MIP): Variables que deben ser enteros\nProblemas de Ruteo (VRP): Optimización de rutas de vehículos\nScheduling: Asignación óptima de recursos en el tiempo\nMetaheurísticas: Algoritmos aproximados para problemas complejos"
+  },
+  {
+    "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html#próximos-posts",
+    "href": "posts/2025-02-08-introduccion-optimizacion/index.html#próximos-posts",
+    "title": "Introducción a la Optimización Matemática",
+    "section": "Próximos Posts",
+    "text": "Próximos Posts\nEn futuros artículos profundizaré en:\n\nVehicle Routing Problem (VRP) - mi área de investigación\nOptimización de horarios universitarios\nAlgoritmos genéticos y metaheurísticas\nUso avanzado de AMPL y Python\n\n\n¿Tienes preguntas sobre optimización? Escríbeme en GitHub o comenta en el video de YouTube cuando lo publique."
   },
   {
     "objectID": "projects.html",
