@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Artículos sobre optimización matemática, algoritmos y aplicaciones en operations research.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBienvenida a mi blog de optimización\n\n\n\ngeneral\n\noptimización\n\n\n\n\n\n\n\n\n\nFeb 8, 2025\n\n\nYosbi J. Golles\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "videos.html",
+    "href": "videos.html",
+    "title": "Videos de YouTube",
+    "section": "",
+    "text": "Próximamente estaré publicando videos sobre:\n\nIntroducción a la optimización matemática\nProgramación lineal y entera\nProblemas de ruteo de vehículos (VRP)\nHerramientas: Python, AMPL, OR-Tools\n\n¡Suscríbete para no perderte ningún video!\n→ Visitar canal"
+  },
+  {
+    "objectID": "videos.html#canal-de-youtube",
+    "href": "videos.html#canal-de-youtube",
+    "title": "Videos de YouTube",
+    "section": "",
+    "text": "Próximamente estaré publicando videos sobre:\n\nIntroducción a la optimización matemática\nProgramación lineal y entera\nProblemas de ruteo de vehículos (VRP)\nHerramientas: Python, AMPL, OR-Tools\n\n¡Suscríbete para no perderte ningún video!\n→ Visitar canal"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Inteligencia Especializada",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "posts/2025-02-08-bienvenida/index.html",
+    "href": "posts/2025-02-08-bienvenida/index.html",
+    "title": "Bienvenida a mi blog de optimización",
+    "section": "",
+    "text": "Bienvenido a mi blog sobre optimización matemática y operations research.\nEn este espacio compartiré:\n\nTutoriales sobre algoritmos de optimización\nExplicaciones de mis proyectos en GitHub\nAnálisis de problemas reales (VRP, scheduling, etc.)\nRecursos y referencias útiles"
+  },
+  {
+    "objectID": "posts/2025-02-08-bienvenida/index.html#introducción",
+    "href": "posts/2025-02-08-bienvenida/index.html#introducción",
+    "title": "Bienvenida a mi blog de optimización",
+    "section": "",
+    "text": "Bienvenido a mi blog sobre optimización matemática y operations research.\nEn este espacio compartiré:\n\nTutoriales sobre algoritmos de optimización\nExplicaciones de mis proyectos en GitHub\nAnálisis de problemas reales (VRP, scheduling, etc.)\nRecursos y referencias útiles"
+  },
+  {
+    "objectID": "posts/2025-02-08-bienvenida/index.html#qué-encontrarás-aquí",
+    "href": "posts/2025-02-08-bienvenida/index.html#qué-encontrarás-aquí",
+    "title": "Bienvenida a mi blog de optimización",
+    "section": "¿Qué encontrarás aquí?",
+    "text": "¿Qué encontrarás aquí?\nEste blog complementa mi canal de YouTube donde explico conceptos de optimización de forma visual y práctica.\n\nTemas principales:\n\nProgramación Lineal y Entera: Formulaciones matemáticas y aplicaciones\nVehicle Routing Problem: Mi especialidad de investigación\nMetaheurísticas: Algoritmos aproximados para problemas complejos\nHerramientas: Python (OR-Tools, PuLP), AMPL, R"
+  },
+  {
+    "objectID": "posts/2025-02-08-bienvenida/index.html#código-de-ejemplo",
+    "href": "posts/2025-02-08-bienvenida/index.html#código-de-ejemplo",
+    "title": "Bienvenida a mi blog de optimización",
+    "section": "Código de ejemplo",
+    "text": "Código de ejemplo\nAquí puedes incluir código que se renderizará con syntax highlighting:\nfrom ortools.linear_solver import pywraplp\n\n# Crear el solver\nsolver = pywraplp.Solver.CreateSolver('SCIP')\n\n# Variables de decisión\nx = solver.NumVar(0, solver.infinity(), 'x')\ny = solver.NumVar(0, solver.infinity(), 'y')\n\n# Función objetivo: maximizar 3x + 4y\nsolver.Maximize(3*x + 4*y)\n\n# Restricciones\nsolver.Add(x + 2*y &lt;= 14)\nsolver.Add(3*x - y &gt;= 0)\n\n# Resolver\nstatus = solver.Solve()\nprint(f'Solución óptima: x={x.solution_value()}, y={y.solution_value()}')"
+  },
+  {
+    "objectID": "posts/2025-02-08-bienvenida/index.html#fórmulas-matemáticas",
+    "href": "posts/2025-02-08-bienvenida/index.html#fórmulas-matemáticas",
+    "title": "Bienvenida a mi blog de optimización",
+    "section": "Fórmulas matemáticas",
+    "text": "Fórmulas matemáticas\nTambién puedo incluir LaTeX para ecuaciones:\n\\[\n\\min \\sum_{i,j} c_{ij} x_{ij}\n\\]\nSujeto a:\n\\[\n\\sum_{j} x_{ij} = 1, \\quad \\forall i \\in C\n\\]\n\n¡Gracias por visitar! Sígueme en GitHub y suscríbete al canal de YouTube.\n\n---\n\n\n\n\n:::{#quarto-navigation-envelope .hidden}\n[Inteligencia Especializada]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl\"}\n[Inteligencia Especializada]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLWludC1uYXZiYXItdGl0bGU=\"}\n[Inicio]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLWludC1uYXZiYXI6SW5pY2lv\"}\n[/index.html]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLWludC1uYXZiYXI6L2luZGV4Lmh0bWw=\"}\n[Blog]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLWludC1uYXZiYXI6QmxvZw==\"}\n[/blog.html]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLWludC1uYXZiYXI6L2Jsb2cuaHRtbA==\"}\n[Proyectos]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLWludC1uYXZiYXI6UHJveWVjdG9z\"}\n[/projects.html]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLWludC1uYXZiYXI6L3Byb2plY3RzLmh0bWw=\"}\n[Videos]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLWludC1uYXZiYXI6VmlkZW9z\"}\n[/videos.html]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLWludC1uYXZiYXI6L3ZpZGVvcy5odG1s\"}\n[Sobre mí]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLWludC1uYXZiYXI6U29icmUgbcOt\"}\n[/about.html]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLWludC1uYXZiYXI6L2Fib3V0Lmh0bWw=\"}\n[https://github.com/yosbijgolles]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLWludC1uYXZiYXI6aHR0cHM6Ly9naXRodWIuY29tL3lvc2JpamdvbGxlcw==\"}\n[https://youtube.com/yosbijgolles]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLWludC1uYXZiYXI6aHR0cHM6Ly95b3V0dWJlLmNvbS95b3NiaWpnb2xsZXM=\"}\n:::\n\n\n\n:::{#quarto-meta-markdown .hidden}\n[Bienvenida a mi blog de optimización – Inteligencia Especializada]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLW1ldGF0aXRsZQ==\"}\n[Bienvenida a mi blog de optimización – Inteligencia Especializada]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=\"}\n[Bienvenida a mi blog de optimización – Inteligencia Especializada]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLW9nY2FyZHRpdGxl\"}\n[Inteligencia Especializada]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLW1ldGFzaXRlbmFtZQ==\"}\n[]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw==\"}\n[]{.hidden .quarto-markdown-envelope-contents render-id=\"cXVhcnRvLW9nY2FyZGRkZXNj\"}\n:::\n\n\n\n\n&lt;!-- --&gt;\n\n::: {.quarto-embedded-source-code}\n```````````````````{.markdown shortcodes=\"false\"}\n---\ntitle: \"Bienvenida a mi blog de optimización\"\nauthor: \"Yosbi J. Golles\"\ndate: \"2025-02-08\"\ncategories: [general, optimización]\nimage: \"thumbnail.jpg\"\n---\n\n## Introducción\n\nBienvenido a mi blog sobre optimización matemática y operations research.\n\nEn este espacio compartiré:\n\n- Tutoriales sobre algoritmos de optimización\n- Explicaciones de mis proyectos en GitHub\n- Análisis de problemas reales (VRP, scheduling, etc.)\n- Recursos y referencias útiles\n\n## ¿Qué encontrarás aquí?\n\nEste blog complementa mi canal de YouTube donde explico conceptos de optimización de forma visual y práctica.\n\n### Temas principales:\n\n- **Programación Lineal y Entera**: Formulaciones matemáticas y aplicaciones\n- **Vehicle Routing Problem**: Mi especialidad de investigación\n- **Metaheurísticas**: Algoritmos aproximados para problemas complejos\n- **Herramientas**: Python (OR-Tools, PuLP), AMPL, R\n\n## Código de ejemplo\n\nAquí puedes incluir código que se renderizará con syntax highlighting:\n```python\nfrom ortools.linear_solver import pywraplp\n\n# Crear el solver\nsolver = pywraplp.Solver.CreateSolver('SCIP')\n\n# Variables de decisión\nx = solver.NumVar(0, solver.infinity(), 'x')\ny = solver.NumVar(0, solver.infinity(), 'y')\n\n# Función objetivo: maximizar 3x + 4y\nsolver.Maximize(3*x + 4*y)\n\n# Restricciones\nsolver.Add(x + 2*y &lt;= 14)\nsolver.Add(3*x - y &gt;= 0)\n\n# Resolver\nstatus = solver.Solve()\nprint(f'Solución óptima: x={x.solution_value()}, y={y.solution_value()}')"
+  },
+  {
+    "objectID": "posts/2025-02-08-bienvenida/index.html#fórmulas-matemáticas-1",
+    "href": "posts/2025-02-08-bienvenida/index.html#fórmulas-matemáticas-1",
+    "title": "Bienvenida a mi blog de optimización",
+    "section": "Fórmulas matemáticas",
+    "text": "Fórmulas matemáticas\nTambién puedo incluir LaTeX para ecuaciones:\n\\[\n\\min \\sum_{i,j} c_{ij} x_{ij}\n\\]\nSujeto a:\n\\[\n\\sum_{j} x_{ij} = 1, \\quad \\forall i \\in C\n\\]\n\n¡Gracias por visitar! Sígueme en GitHub y suscríbete al canal de YouTube.\n\n---\n:::"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Proyectos",
+    "section": "",
+    "text": "Investigación sobre problemas de ruteo de vehículos usando programación entera mixta.\nVer en GitHub\n\n\n\nModelos de programación lineal para asignación de cursos usando AMPL y Python.\n\n\n\nImplementación de Sen’s slope y Mann-Kendall test en R para análisis de datos meteorológicos.\n\nMás proyectos próximamente…"
+  },
+  {
+    "objectID": "projects.html#proyectos-en-github",
+    "href": "projects.html#proyectos-en-github",
+    "title": "Proyectos",
+    "section": "",
+    "text": "Investigación sobre problemas de ruteo de vehículos usando programación entera mixta.\nVer en GitHub\n\n\n\nModelos de programación lineal para asignación de cursos usando AMPL y Python.\n\n\n\nImplementación de Sen’s slope y Mann-Kendall test en R para análisis de datos meteorológicos.\n\nMás proyectos próximamente…"
+  }
+]

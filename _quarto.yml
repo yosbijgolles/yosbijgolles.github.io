@@ -1,0 +1,32 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Inteligencia Especializada"
+  navbar:
+    left:
+      - text: "Inicio"
+        href: index.qmd
+      - text: "Blog"
+        href: blog.qmd
+      - text: "Proyectos"
+        href: projects.qmd
+      - text: "Videos"
+        href: videos.qmd
+      - text: "Sobre mí"
+        href: about.qmd
+    right:
+      - icon: github
+        href: https://github.com/yosbijgolles
+      - icon: youtube
+        href: https://youtube.com/yosbijgolles
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    code-fold: false
+    code-tools: true

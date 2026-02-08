@@ -1,0 +1,20 @@
+{
+  "about.qmd": {
+    "about.html": "a79c4af3"
+  },
+  "index.qmd": {
+    "index.html": "48bc7583"
+  },
+  "posts/2025-02-08-bienvenida/index.qmd": {
+    "index.html": "ccb53d7e"
+  },
+  "videos.qmd": {
+    "videos.html": "c12d47dc"
+  },
+  "projects.qmd": {
+    "projects.html": "9e1f5a0a"
+  },
+  "blog.qmd": {
+    "blog.html": "8c4e106c"
+  }
+}
