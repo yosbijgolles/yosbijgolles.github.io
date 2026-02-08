@@ -21,11 +21,46 @@
     "text": "Próximamente estaré publicando videos sobre:\n\nIntroducción a la optimización matemática\nProgramación lineal y entera\nProblemas de ruteo de vehículos (VRP)\nHerramientas: Python, AMPL, OR-Tools\n\n¡Suscríbete para no perderte ningún video!\n→ Visitar canal"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Inteligencia Especializada",
+    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html",
+    "href": "posts/2025-02-09-vehicle-routing-problem/index.html",
+    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
     "section": "",
-    "text": "bla bla bla"
+    "text": "El Vehicle Routing Problem (VRP) es un problema de optimización combinatoria que busca determinar las rutas óptimas para una flota de vehículos que deben visitar un conjunto de clientes."
+  },
+  {
+    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#qué-es-el-vehicle-routing-problem",
+    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#qué-es-el-vehicle-routing-problem",
+    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
+    "section": "",
+    "text": "El Vehicle Routing Problem (VRP) es un problema de optimización combinatoria que busca determinar las rutas óptimas para una flota de vehículos que deben visitar un conjunto de clientes."
+  },
+  {
+    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#formulación-básica",
+    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#formulación-básica",
+    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
+    "section": "Formulación Básica",
+    "text": "Formulación Básica\nDado: - Un depósito central - Un conjunto de clientes con demandas - Una flota de vehículos con capacidad limitada\nObjetivo: Minimizar la distancia total recorrida (o el costo) mientras se satisfacen todas las demandas."
+  },
+  {
+    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#variantes-del-vrp",
+    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#variantes-del-vrp",
+    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
+    "section": "Variantes del VRP",
+    "text": "Variantes del VRP\nExisten múltiples variantes según las restricciones:\n\n\n\nVariante\nDescripción\n\n\n\n\nCVRP\nCapacitated VRP - vehículos con capacidad limitada\n\n\nVRPTW\nVRP with Time Windows - ventanas de tiempo para visitas\n\n\nVRPPD\nVRP with Pickup and Delivery - recolección y entrega\n\n\nMDVRP\nMulti-Depot VRP - múltiples depósitos"
+  },
+  {
+    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#ejemplo-simple-con-or-tools",
+    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#ejemplo-simple-con-or-tools",
+    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
+    "section": "Ejemplo Simple con OR-Tools",
+    "text": "Ejemplo Simple con OR-Tools\nfrom ortools.constraint_solver import routing_enums_pb2\nfrom ortools.constraint_solver import pywrapcp\n\ndef crear_modelo_datos():\n    data = {}\n    data['distance_matrix'] = [\n        [0, 10, 15, 20],\n        [10, 0, 35, 25],\n        [15, 35, 0, 30],\n        [20, 25, 30, 0],\n    ]\n    data['num_vehicles'] = 1\n    data['depot'] = 0\n    return data\n\ndata = crear_modelo_datos()\nmanager = pywrapcp.RoutingIndexManager(\n    len(data['distance_matrix']),\n    data['num_vehicles'],\n    data['depot']\n)\nrouting = pywrapcp.RoutingModel(manager)\n\n# Definir función de costo\ndef distance_callback(from_index, to_index):\n    from_node = manager.IndexToNode(from_index)\n    to_node = manager.IndexToNode(to_index)\n    return data['distance_matrix'][from_node][to_node]\n\ntransit_callback_index = routing.RegisterTransitCallback(distance_callback)\nrouting.SetArcCostEvaluatorOfAllVehicles(transit_callback_index)\n\n# Resolver\nsearch_parameters = pywrapcp.DefaultRoutingSearchParameters()\nsolution = routing.SolveWithParameters(search_parameters)"
+  },
+  {
+    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#aplicaciones-reales",
+    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#aplicaciones-reales",
+    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
+    "section": "Aplicaciones Reales",
+    "text": "Aplicaciones Reales\n\nDistribución de paquetería\nRecolección de residuos\nTransporte escolar\nServicios de emergencia\n\n\nEn próximos posts exploraremos algoritmos específicos para resolver el VRP."
   },
   {
     "objectID": "about.html",
@@ -33,6 +68,13 @@
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Inteligencia Especializada",
+    "section": "",
+    "text": "bla bla bla"
   },
   {
     "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html",
@@ -96,47 +138,5 @@
     "title": "Proyectos",
     "section": "",
     "text": "Investigación sobre problemas de ruteo de vehículos usando programación entera mixta.\nVer en GitHub\n\n\n\nModelos de programación lineal para asignación de cursos usando AMPL y Python.\n\n\n\nImplementación de Sen’s slope y Mann-Kendall test en R para análisis de datos meteorológicos.\n\nMás proyectos próximamente…"
-  },
-  {
-    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html",
-    "href": "posts/2025-02-09-vehicle-routing-problem/index.html",
-    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
-    "section": "",
-    "text": "El Vehicle Routing Problem (VRP) es un problema de optimización combinatoria que busca determinar las rutas óptimas para una flota de vehículos que deben visitar un conjunto de clientes."
-  },
-  {
-    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#qué-es-el-vehicle-routing-problem",
-    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#qué-es-el-vehicle-routing-problem",
-    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
-    "section": "",
-    "text": "El Vehicle Routing Problem (VRP) es un problema de optimización combinatoria que busca determinar las rutas óptimas para una flota de vehículos que deben visitar un conjunto de clientes."
-  },
-  {
-    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#formulación-básica",
-    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#formulación-básica",
-    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
-    "section": "Formulación Básica",
-    "text": "Formulación Básica\nDado: - Un depósito central - Un conjunto de clientes con demandas - Una flota de vehículos con capacidad limitada\nObjetivo: Minimizar la distancia total recorrida (o el costo) mientras se satisfacen todas las demandas."
-  },
-  {
-    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#variantes-del-vrp",
-    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#variantes-del-vrp",
-    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
-    "section": "Variantes del VRP",
-    "text": "Variantes del VRP\nExisten múltiples variantes según las restricciones:\n\n\n\nVariante\nDescripción\n\n\n\n\nCVRP\nCapacitated VRP - vehículos con capacidad limitada\n\n\nVRPTW\nVRP with Time Windows - ventanas de tiempo para visitas\n\n\nVRPPD\nVRP with Pickup and Delivery - recolección y entrega\n\n\nMDVRP\nMulti-Depot VRP - múltiples depósitos"
-  },
-  {
-    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#ejemplo-simple-con-or-tools",
-    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#ejemplo-simple-con-or-tools",
-    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
-    "section": "Ejemplo Simple con OR-Tools",
-    "text": "Ejemplo Simple con OR-Tools\nfrom ortools.constraint_solver import routing_enums_pb2\nfrom ortools.constraint_solver import pywrapcp\n\ndef crear_modelo_datos():\n    data = {}\n    data['distance_matrix'] = [\n        [0, 10, 15, 20],\n        [10, 0, 35, 25],\n        [15, 35, 0, 30],\n        [20, 25, 30, 0],\n    ]\n    data['num_vehicles'] = 1\n    data['depot'] = 0\n    return data\n\ndata = crear_modelo_datos()\nmanager = pywrapcp.RoutingIndexManager(\n    len(data['distance_matrix']),\n    data['num_vehicles'],\n    data['depot']\n)\nrouting = pywrapcp.RoutingModel(manager)\n\n# Definir función de costo\ndef distance_callback(from_index, to_index):\n    from_node = manager.IndexToNode(from_index)\n    to_node = manager.IndexToNode(to_index)\n    return data['distance_matrix'][from_node][to_node]\n\ntransit_callback_index = routing.RegisterTransitCallback(distance_callback)\nrouting.SetArcCostEvaluatorOfAllVehicles(transit_callback_index)\n\n# Resolver\nsearch_parameters = pywrapcp.DefaultRoutingSearchParameters()\nsolution = routing.SolveWithParameters(search_parameters)"
-  },
-  {
-    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#aplicaciones-reales",
-    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#aplicaciones-reales",
-    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
-    "section": "Aplicaciones Reales",
-    "text": "Aplicaciones Reales\n\nDistribución de paquetería\nRecolección de residuos\nTransporte escolar\nServicios de emergencia\n\n\nEn próximos posts exploraremos algoritmos específicos para resolver el VRP."
   }
 ]
