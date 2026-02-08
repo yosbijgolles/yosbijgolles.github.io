@@ -1,1 +1,49 @@
 /* css styles */
+
+/* Avatar circular del autor en posts (solo en autor, no en fecha) */
+.quarto-title-meta-contents p:not(.date)::before {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-image: url("profile.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.quarto-title-meta-contents p:not(.date) {
+  display: flex;
+  align-items: center;
+}
+
+/* Avatar circular en el listado del blog (formato lista) */
+.quarto-post {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.quarto-post::before {
+  content: "";
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background-image: url("profile.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+/* Ocultar thumbnail vacío y expandir contenido */
+.quarto-post .thumbnail:has(.listing-item-img-placeholder) {
+  display: none;
+}
+
+.quarto-post .body {
+  flex-grow: 1;
+  min-width: 0;
+}
