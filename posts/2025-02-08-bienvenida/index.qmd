@@ -3,7 +3,6 @@ title: "Bienvenida a mi blog de optimización"
 author: "Yosbi J. Golles"
 date: "2025-02-08"
 categories: [general, optimización]
-image: "thumbnail.jpg"      
 ---
 
 ## Introducción
@@ -70,6 +69,3 @@ $$
 ---
 
 ¡Gracias por visitar! Sígueme en [GitHub](https://github.com/yosbijgolles) y suscríbete al canal de YouTube.
-
-
----
