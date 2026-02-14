@@ -1,5 +1,38 @@
 ---
-title: "Inteligencia Especializada"
+title: "Yosbi J Golles"
+subtitle: "Matemática aplicada · Optimización · Investigación de Operaciones · IA"
+page-layout: article
+toc: true
+listing:
+  - id: recent-posts
+    contents: posts
+    sort: "date desc"
+    type: default
+    max-items: 3
+    fields: [date, title, subtitle, categories]
 ---
 
-bla bla bla 
+Bienvenido a **Inteligencia Especializada**, un espacio dedicado a explorar las herramientas matemáticas y computacionales que permiten tomar mejores decisiones.
+
+Mis principales intereses giran en torno a la **optimización matemática y la inteligencia artificial**, con aplicaciones en logística, cadenas de suministro, planificación de producción, asignación de recursos y análisis de datos.
+
+## Áreas de interés
+
+**Optimización Matemática** — Programación lineal, entera mixta, no lineal y combinatoria. Modelado algebraico con herramientas como Pyomo, AMPL y solvers como Gurobi, CPLEX y GLPK.
+
+**Investigación de Operaciones** — Metodologías cuantitativas para el análisis y diseño de sistemas complejos: ruteo de vehículos, scheduling, localización de instalaciones, teoría de colas.
+
+**Matemática Aplicada** — Álgebra lineal, análisis convexo, probabilidad y estadística como fundamentos para el modelado y la toma de decisiones.
+
+**Inteligencia Artificial** — Machine learning, deep learning y sus conexiones con la optimización. Enfoques híbridos entre OR y ML.
+
+## Publicaciones recientes
+
+::: {#recent-posts}
+:::
+
+[Ver todas las publicaciones →](blog.qmd)
+
+## Contacto
+
+Todo el contenido y código de este blog está disponible en mi perfil de [GitHub](https://github.com/yosbijgolles). No dudes en contactarme para discutir temas de investigación, casos de estudio o proyectos de consultoría.

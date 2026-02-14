@@ -1,6 +1,7 @@
 author:
-  - name: "Yosbi J. Golles"
-    url: https://github.com/yosbijgolles
-    image: /profile.jpg
+  - name: "Yosbi J Golles"
+    url: https://yosbijgolles.github.io
 
-
+citation: true
+draft: false
+lang: es

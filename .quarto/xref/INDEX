@@ -1,26 +1,17 @@
 {
   "about.qmd": {
-    "about.html": "a79c4af3"
+    "about.html": "45a3317b"
   },
   "index.qmd": {
-    "index.html": "48bc7583"
+    "index.html": "7f7d3d81"
   },
-  "posts/2025-02-08-bienvenida/index.qmd": {
-    "index.html": "ccb53d7e"
+  "posts/problema-de-la-mochila/index.qmd": {
+    "index.html": "e3299b00"
   },
-  "videos.qmd": {
-    "videos.html": "c12d47dc"
-  },
-  "projects.qmd": {
-    "projects.html": "9e1f5a0a"
+  "posts/que-es-optimizacion-matematica/index.qmd": {
+    "index.html": "889cea4c"
   },
   "blog.qmd": {
-    "blog.html": "8c4e106c"
-  },
-  "posts/2025-02-08-introduccion-optimizacion/index.qmd": {
-    "index.html": "3df3f251"
-  },
-  "posts/2025-02-09-vehicle-routing-problem/index.qmd": {
-    "index.html": "4d063f32"
+    "blog.html": "c899347b"
   }
 }

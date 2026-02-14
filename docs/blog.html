@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.27">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Blog – Inteligencia Especializada</title>
+<title>Inteligencia Especializada – Home</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b7531fbf5822f1c2d3099a119fefb516.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-53446fed5ed444c087c9c2bc361612cc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -57,17 +57,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 <script>
@@ -80,9 +80,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title','listing-subtitle','listing-categories','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -136,35 +136,23 @@ window.Quarto = {
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Inteligencia Especializada</span>
+    <span class="navbar-title">Home</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Inicio</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="./blog.html" aria-current="page"> 
 <span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
-<span class="menu-text">Proyectos</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./videos.html"> 
-<span class="menu-text">Videos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
@@ -178,7 +166,12 @@ window.Quarto = {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://youtube.com/yosbijgolles"> <i class="bi bi-youtube" role="img">
+    <a class="nav-link" href="https://linkedin.com/in/yosbijgolles"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/@yosbijgolles"> <i class="bi bi-youtube" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -190,110 +183,113 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Blog</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="aW50cm9kdWNjaSVDMyVCM24=">introducción <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bG9nJUMzJUFEc3RpY2E=">logística <span class="quarto-category-count">(1)</span></div><div class="category" data-category="b3B0aW1pemFjaSVDMyVCM24=">optimización <span class="quarto-category-count">(2)</span></div><div class="category" data-category="VlJQ">VRP <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZnVuZGFtZW50b3M=">fundamentos <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW52ZXN0aWdhY2klQzMlQjNuJTIwZGUlMjBvcGVyYWNpb25lcw==">investigación de operaciones <span class="quarto-category-count">(1)</span></div><div class="category" data-category="b3B0aW1pemFjaSVDMyVCM24lMjBtYXRlbSVDMyVBMXRpY2E=">optimización matemática <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cHJvZ3JhbWFjaSVDMyVCM24lMjBlbnRlcmE=">programación entera <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvZ3JhbWFjaSVDMyVCM24lMjBtYXRlbSVDMyVBMXRpY2E=">programación matemática <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Inteligencia Especializada</h1>
+<p class="subtitle lead">Matemática aplicada · Optimización · Investigación de Operaciones · Inteligencia Artificial</p>
+</div>
 
 
 
+<div class="quarto-title-meta column-page-left">
+
+    
+  
+    
+  </div>
+  
 
 
-<p>Artículos sobre optimización matemática, algoritmos y aplicaciones en operations research.</p>
+</header>
+
+
 
 
 
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="b3B0aW1pemFjaSVDMyVCM24lMkNWUlAlMkNsb2clQzMlQURzdGljYQ==" data-listing-date-sort="1739077200000" data-listing-file-modified-sort="1770578550825" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="274">
-<div class="thumbnail"><a href="./posts/2025-02-09-vehicle-routing-problem/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="0" data-categories="b3B0aW1pemFjaSVDMyVCM24lMjBtYXRlbSVDMyVBMXRpY2ElMkNpbnZlc3RpZ2FjaSVDMyVCM24lMjBkZSUyMG9wZXJhY2lvbmVzJTJDcHJvZ3JhbWFjaSVDMyVCM24lMjBlbnRlcmE=" data-listing-date-sort="1739595600000" data-listing-file-modified-sort="1771053308036" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="796">
+<div class="thumbnail"><a href="./posts/problema-de-la-mochila/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/2025-02-09-vehicle-routing-problem/index.html" class="no-external">Vehicle Routing Problem (VRP): Conceptos Básicos</a>
+<a href="./posts/problema-de-la-mochila/index.html" class="no-external">El Problema de la Mochila</a>
 </h3>
+<div class="listing-subtitle">
+<a href="./posts/problema-de-la-mochila/index.html" class="no-external">Un clásico de la optimización combinatoria</a>
+</div>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('b3B0aW1pemFjaSVDMyVCM24='); return false;">optimización</div>
+<div class="listing-category" onclick="window.quartoListingCategory('b3B0aW1pemFjaSVDMyVCM24lMjBtYXRlbSVDMyVBMXRpY2E='); return false;">optimización matemática</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('VlJQ'); return false;">VRP</div>
+<div class="listing-category" onclick="window.quartoListingCategory('aW52ZXN0aWdhY2klQzMlQjNuJTIwZGUlMjBvcGVyYWNpb25lcw=='); return false;">investigación de operaciones</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('bG9nJUMzJUFEc3RpY2E='); return false;">logística</div>
+<div class="listing-category" onclick="window.quartoListingCategory('cHJvZ3JhbWFjaSVDMyVCM24lMjBlbnRlcmE='); return false;">programación entera</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/2025-02-09-vehicle-routing-problem/index.html" class="no-external">
-<p>Introducción al problema de ruteo de vehículos, uno de los problemas más estudiados en optimización combinatoria</p>
-</a></div>
 </div>
 <div class="metadata">
-<a href="./posts/2025-02-09-vehicle-routing-problem/index.html" class="no-external">
+<a href="./posts/problema-de-la-mochila/index.html" class="no-external">
 <div class="listing-date">
-Feb 9, 2025
+15 feb 2025
 </div>
 <div class="listing-author">
-Yosbi J. Golles
+Yosbi J Golles
 </div>
+<div class="listing-reading-time">4 minutos</div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="b3B0aW1pemFjaSVDMyVCM24lMkNpbnRyb2R1Y2NpJUMzJUIzbg==" data-listing-date-sort="1738990800000" data-listing-file-modified-sort="1770575511158" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="336">
-<div class="thumbnail"><a href="./posts/2025-02-08-introduccion-optimizacion/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="1" data-categories="b3B0aW1pemFjaSVDMyVCM24lMjBtYXRlbSVDMyVBMXRpY2ElMkNmdW5kYW1lbnRvcyUyQ3Byb2dyYW1hY2klQzMlQjNuJTIwbWF0ZW0lQzMlQTF0aWNh" data-listing-date-sort="1739509200000" data-listing-file-modified-sort="1771053307035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="552">
+<div class="thumbnail"><a href="./posts/que-es-optimizacion-matematica/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/2025-02-08-introduccion-optimizacion/index.html" class="no-external">Introducción a la Optimización Matemática</a>
+<a href="./posts/que-es-optimizacion-matematica/index.html" class="no-external">¿Qué es la Optimización Matemática?</a>
 </h3>
+<div class="listing-subtitle">
+<a href="./posts/que-es-optimizacion-matematica/index.html" class="no-external">Una introducción a la programación matemática y sus fundamentos</a>
+</div>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('b3B0aW1pemFjaSVDMyVCM24='); return false;">optimización</div>
+<div class="listing-category" onclick="window.quartoListingCategory('b3B0aW1pemFjaSVDMyVCM24lMjBtYXRlbSVDMyVBMXRpY2E='); return false;">optimización matemática</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('aW50cm9kdWNjaSVDMyVCM24='); return false;">introducción</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ZnVuZGFtZW50b3M='); return false;">fundamentos</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHJvZ3JhbWFjaSVDMyVCM24lMjBtYXRlbSVDMyVBMXRpY2E='); return false;">programación matemática</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/2025-02-08-introduccion-optimizacion/index.html" class="no-external">
-<p>Una introducción a los conceptos fundamentales de optimización matemática y operations research</p>
-</a></div>
 </div>
 <div class="metadata">
-<a href="./posts/2025-02-08-introduccion-optimizacion/index.html" class="no-external">
+<a href="./posts/que-es-optimizacion-matematica/index.html" class="no-external">
 <div class="listing-date">
-Feb 8, 2025
+14 feb 2025
 </div>
 <div class="listing-author">
-Yosbi J. Golles
+Yosbi J Golles
 </div>
+<div class="listing-reading-time">3 minutos</div>
 </a>
 </div>
 </div>
 </div>
-<div class="listing-no-matching d-none">No matching items</div>
+<div class="listing-no-matching d-none">No hay resultados</div>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -320,12 +316,12 @@ Yosbi J. Golles
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Copiado");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Copiado");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -696,6 +692,34 @@ Yosbi J. Golles
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 Yosbi J. Golles — Inteligencia Especializada</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>
+window.addEventListener("load", function() {
+  document.querySelectorAll(".quarto-title-meta-contents a[href*='yosbijgolles']").forEach(function(el) {
+    if (!el.querySelector(".author-avatar")) {
+      var img = document.createElement("img");
+      img.src = document.querySelector("meta[name='quarto:offset']")
+        ? document.querySelector("meta[name='quarto:offset']").content + "profile.png"
+        : "/profile.png";
+      img.alt = "";
+      img.className = "author-avatar";
+      el.prepend(img);
+    }
+  });
+});
+</script>
 
 
 

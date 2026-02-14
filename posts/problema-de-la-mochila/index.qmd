@@ -1,0 +1,144 @@
+---
+title: "El Problema de la Mochila"
+subtitle: "Un clásico de la optimización combinatoria"
+date: "2025-02-15"
+description: "Formulación, ejemplo numérico y resolución con Python y Pyomo del problema de la mochila, un clásico de la optimización combinatoria."
+categories: [optimización matemática, investigación de operaciones, programación entera]
+---
+
+## Introducción
+
+El **problema de la mochila** (*knapsack problem*) es uno de los problemas más conocidos y estudiados en optimización combinatoria. Su enunciado es sencillo: dada una mochila con capacidad limitada y un conjunto de objetos, cada uno con un peso y un valor, ¿cómo elegir qué objetos llevar para maximizar el valor total sin exceder la capacidad?
+
+A pesar de su sencillez, este problema es **NP-hard** y aparece como subproblema en muchas aplicaciones industriales reales.
+
+## Formulación matemática
+
+### Datos del problema
+
+| Símbolo | Descripción |
+|---------|-------------|
+| $n$ | Número de objetos disponibles |
+| $v_i$ | Valor del objeto $i$ |
+| $w_i$ | Peso del objeto $i$ |
+| $W$ | Capacidad máxima de la mochila |
+
+### Variable de decisión
+
+$$
+x_i = \begin{cases} 1 & \text{si el objeto } i \text{ se incluye en la mochila} \\ 0 & \text{en caso contrario} \end{cases}
+$$
+
+### Modelo completo
+
+$$
+\begin{aligned}
+\max \quad & \sum_{i=1}^{n} v_i \, x_i \\
+\text{s.a.} \quad & \sum_{i=1}^{n} w_i \, x_i \leq W \\
+& x_i \in \{0, 1\}, \quad i = 1, \dots, n
+\end{aligned}
+$$
+
+Este es un problema de **programación entera binaria**: una función objetivo lineal, una restricción lineal, y variables binarias.
+
+## Ejemplo numérico
+
+Supongamos 4 objetos y una mochila con capacidad $W = 10$ kg:
+
+| Objeto | Valor ($v_i$) | Peso ($w_i$) kg |
+|--------|:-------------:|:---------------:|
+| 1      | 10            | 5               |
+| 2      | 6             | 4               |
+| 3      | 7             | 3               |
+| 4      | 3             | 2               |
+
+¿Cuál es la combinación óptima?
+
+## Resolución con Python y Pyomo
+
+Usaremos [Pyomo](https://www.pyomo.org/), un framework de modelado algebraico en Python, con el solver GLPK.
+
+```python
+from pyomo.environ import *
+
+# --- Datos ---
+valores = {1: 10, 2: 6, 3: 7, 4: 3}
+pesos   = {1: 5,  2: 4, 3: 3, 4: 2}
+capacidad = 10
+
+# --- Modelo ---
+model = ConcreteModel("Mochila")
+
+model.I = Set(initialize=valores.keys())
+model.x = Var(model.I, domain=Binary)
+
+# Función objetivo: maximizar valor total
+model.obj = Objective(
+    expr=sum(valores[i] * model.x[i] for i in model.I),
+    sense=maximize
+)
+
+# Restricción de capacidad
+model.peso_max = Constraint(
+    expr=sum(pesos[i] * model.x[i] for i in model.I) <= capacidad
+)
+
+# --- Resolver ---
+solver = SolverFactory('glpk')
+resultado = solver.solve(model, tee=False)
+
+# --- Resultados ---
+print("=" * 40)
+print("SOLUCIÓN ÓPTIMA")
+print("=" * 40)
+seleccionados = []
+for i in model.I:
+    if model.x[i].value == 1:
+        seleccionados.append(i)
+        print(f"  Objeto {i}: valor={valores[i]}, peso={pesos[i]}")
+
+peso_total = sum(pesos[i] for i in seleccionados)
+print(f"\nValor total:  {int(model.obj())}")
+print(f"Peso total:   {peso_total} / {capacidad}")
+```
+
+**Solución esperada**: se seleccionan los objetos 1, 3 y 4, con un valor total de 20 y un peso total de 10.
+
+## ¿Por qué es importante?
+
+El problema de la mochila no es solo un ejercicio académico. Aparece como subproblema en:
+
+- **Carga de contenedores**: selección de productos a transportar.
+- **Presupuesto de capital**: selección de proyectos de inversión con presupuesto limitado.
+- **Cutting stock**: corte óptimo de materiales.
+- **Criptografía**: sistemas basados en el problema de la mochila.
+- **Column generation**: el subproblema en muchos métodos de descomposición es un knapsack.
+
+## Variantes
+
+El problema tiene varias extensiones importantes:
+
+| Variante | Descripción |
+|----------|-------------|
+| **Mochila fraccionaria** | Se permite llevar fracciones de objetos. Resoluble en $O(n \log n)$ con un algoritmo greedy. |
+| **Mochila 0-1 múltiple** | Varias mochilas, cada objeto se asigna a lo más a una. |
+| **Mochila multidimensional** | Múltiples restricciones de capacidad (peso, volumen, etc.). |
+| **Mochila con repetición** | Se pueden tomar múltiples copias de cada objeto. |
+
+## Complejidad computacional
+
+El problema de la mochila 0-1 es **NP-hard**, lo que significa que no se conoce un algoritmo eficiente (polinomial) para resolverlo en el caso general. Sin embargo:
+
+- Existe un algoritmo de **programación dinámica** con complejidad $O(nW)$ (pseudopolinomial).
+- Para instancias prácticas, los solvers modernos (GLPK, Gurobi, CPLEX) lo resuelven eficientemente mediante branch and bound.
+- Existen **esquemas de aproximación** (FPTAS) que garantizan soluciones cercanas al óptimo.
+
+## Conclusión
+
+El problema de la mochila es un punto de entrada natural a la optimización combinatoria y la programación entera. Su formulación es simple, pero encierra la complejidad fundamental de decidir en contextos discretos. Dominarlo es una base sólida para abordar problemas más complejos.
+
+## Referencias
+
+- Kellerer, H., Pferschy, U., & Pisinger, D. (2004). *Knapsack Problems*. Springer.
+- Wolsey, L. A. (2020). *Integer Programming*. Wiley.
+- Pyomo Documentation: [pyomo.org](https://www.pyomo.org/)

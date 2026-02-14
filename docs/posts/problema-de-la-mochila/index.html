@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Yosbi J. Golles">
-<meta name="dcterms.date" content="2025-02-08">
-<meta name="description" content="Una introducción a los conceptos fundamentales de optimización matemática y operations research">
+<meta name="author" content="Yosbi J Golles">
+<meta name="description" content="Formulación, ejemplo numérico y resolución con Python y Pyomo del problema de la mochila, un clásico de la optimización combinatoria.">
 
-<title>Introducción a la Optimización Matemática – Inteligencia Especializada</title>
+<title>El Problema de la Mochila – Home</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b7531fbf5822f1c2d3099a119fefb516.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-53446fed5ed444c087c9c2bc361612cc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -93,17 +92,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
@@ -148,30 +147,18 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Inteligencia Especializada</span>
+    <span class="navbar-title">Home</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Inicio</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../projects.html"> 
-<span class="menu-text">Proyectos</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../videos.html"> 
-<span class="menu-text">Videos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
@@ -185,7 +172,12 @@ window.Quarto = {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://youtube.com/yosbijgolles"> <i class="bi bi-youtube" role="img">
+    <a class="nav-link" href="https://linkedin.com/in/yosbijgolles"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/@yosbijgolles"> <i class="bi bi-youtube" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -202,18 +194,23 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#qué-es-la-optimización-matemática" id="toc-qué-es-la-optimización-matemática" class="nav-link active" data-scroll-target="#qué-es-la-optimización-matemática">¿Qué es la Optimización Matemática?</a></li>
-  <li><a href="#componentes-de-un-problema-de-optimización" id="toc-componentes-de-un-problema-de-optimización" class="nav-link" data-scroll-target="#componentes-de-un-problema-de-optimización">Componentes de un Problema de Optimización</a></li>
-  <li><a href="#ejemplo-clásico-programación-lineal" id="toc-ejemplo-clásico-programación-lineal" class="nav-link" data-scroll-target="#ejemplo-clásico-programación-lineal">Ejemplo Clásico: Programación Lineal</a>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#formulación-matemática" id="toc-formulación-matemática" class="nav-link" data-scroll-target="#formulación-matemática">Formulación matemática</a>
   <ul class="collapse">
-  <li><a href="#formulación-matemática" id="toc-formulación-matemática" class="nav-link" data-scroll-target="#formulación-matemática">Formulación Matemática</a></li>
+  <li><a href="#datos-del-problema" id="toc-datos-del-problema" class="nav-link" data-scroll-target="#datos-del-problema">Datos del problema</a></li>
+  <li><a href="#variable-de-decisión" id="toc-variable-de-decisión" class="nav-link" data-scroll-target="#variable-de-decisión">Variable de decisión</a></li>
+  <li><a href="#modelo-completo" id="toc-modelo-completo" class="nav-link" data-scroll-target="#modelo-completo">Modelo completo</a></li>
   </ul></li>
-  <li><a href="#resolución-con-python" id="toc-resolución-con-python" class="nav-link" data-scroll-target="#resolución-con-python">Resolución con Python</a></li>
-  <li><a href="#tipos-de-problemas-de-optimización" id="toc-tipos-de-problemas-de-optimización" class="nav-link" data-scroll-target="#tipos-de-problemas-de-optimización">Tipos de Problemas de Optimización</a></li>
-  <li><a href="#próximos-posts" id="toc-próximos-posts" class="nav-link" data-scroll-target="#próximos-posts">Próximos Posts</a></li>
+  <li><a href="#ejemplo-numérico" id="toc-ejemplo-numérico" class="nav-link" data-scroll-target="#ejemplo-numérico">Ejemplo numérico</a></li>
+  <li><a href="#resolución-con-python-y-pyomo" id="toc-resolución-con-python-y-pyomo" class="nav-link" data-scroll-target="#resolución-con-python-y-pyomo">Resolución con Python y Pyomo</a></li>
+  <li><a href="#por-qué-es-importante" id="toc-por-qué-es-importante" class="nav-link" data-scroll-target="#por-qué-es-importante">¿Por qué es importante?</a></li>
+  <li><a href="#variantes" id="toc-variantes" class="nav-link" data-scroll-target="#variantes">Variantes</a></li>
+  <li><a href="#complejidad-computacional" id="toc-complejidad-computacional" class="nav-link" data-scroll-target="#complejidad-computacional">Complejidad computacional</a></li>
+  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión">Conclusión</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
 </nav>
     </div>
@@ -222,16 +219,18 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introducción a la Optimización Matemática</h1>
+<h1 class="title">El Problema de la Mochila</h1>
+<p class="subtitle lead">Un clásico de la optimización combinatoria</p>
   <div class="quarto-categories">
-    <div class="quarto-category">optimización</div>
-    <div class="quarto-category">introducción</div>
+    <div class="quarto-category">optimización matemática</div>
+    <div class="quarto-category">investigación de operaciones</div>
+    <div class="quarto-category">programación entera</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Una introducción a los conceptos fundamentales de optimización matemática y operations research
+    Formulación, ejemplo numérico y resolución con Python y Pyomo del problema de la mochila, un clásico de la optimización combinatoria.
   </div>
 </div>
 
@@ -239,16 +238,16 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Autor</div>
     <div class="quarto-title-meta-contents">
-             <p>Yosbi J. Golles </p>
+             <p><a href="https://yosbijgolles.github.io">Yosbi J Golles</a> </p>
           </div>
   </div>
     
     <div>
-    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 8, 2025</p>
+      <p class="date">15 de febrero de 2025</p>
     </div>
   </div>
   
@@ -260,103 +259,221 @@ window.Quarto = {
 </header>
 
 
-<section id="qué-es-la-optimización-matemática" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-la-optimización-matemática">¿Qué es la Optimización Matemática?</h2>
-<p>La optimización matemática es el proceso de encontrar la mejor solución posible a un problema, sujeto a ciertas restricciones. Es una herramienta fundamental en Operations Research y tiene aplicaciones en logística, finanzas, manufactura, y muchos otros campos.</p>
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<p>El <strong>problema de la mochila</strong> (<em>knapsack problem</em>) es uno de los problemas más conocidos y estudiados en optimización combinatoria. Su enunciado es sencillo: dada una mochila con capacidad limitada y un conjunto de objetos, cada uno con un peso y un valor, ¿cómo elegir qué objetos llevar para maximizar el valor total sin exceder la capacidad?</p>
+<p>A pesar de su sencillez, este problema es <strong>NP-hard</strong> y aparece como subproblema en muchas aplicaciones industriales reales.</p>
 </section>
-<section id="componentes-de-un-problema-de-optimización" class="level2">
-<h2 class="anchored" data-anchor-id="componentes-de-un-problema-de-optimización">Componentes de un Problema de Optimización</h2>
-<p>Todo problema de optimización tiene tres elementos clave:</p>
-<p><strong>1. Variables de decisión</strong>: Las cantidades que queremos determinar</p>
-<p><strong>2. Función objetivo</strong>: Lo que queremos maximizar o minimizar</p>
-<p><strong>3. Restricciones</strong>: Las limitaciones que debemos respetar</p>
+<section id="formulación-matemática" class="level2">
+<h2 class="anchored" data-anchor-id="formulación-matemática">Formulación matemática</h2>
+<section id="datos-del-problema" class="level3">
+<h3 class="anchored" data-anchor-id="datos-del-problema">Datos del problema</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Símbolo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(n\)</span></td>
+<td>Número de objetos disponibles</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(v_i\)</span></td>
+<td>Valor del objeto <span class="math inline">\(i\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(w_i\)</span></td>
+<td>Peso del objeto <span class="math inline">\(i\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(W\)</span></td>
+<td>Capacidad máxima de la mochila</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="ejemplo-clásico-programación-lineal" class="level2">
-<h2 class="anchored" data-anchor-id="ejemplo-clásico-programación-lineal">Ejemplo Clásico: Programación Lineal</h2>
-<p>Supongamos que una empresa fabrica dos productos: A y B.</p>
-<ul>
-<li>Producto A genera $3 de ganancia</li>
-<li>Producto B genera $4 de ganancia</li>
-<li>Hay limitaciones de recursos (materias primas, tiempo de máquina)</li>
-</ul>
-<p>Queremos <strong>maximizar las ganancias</strong> respetando las restricciones.</p>
-<section id="formulación-matemática" class="level3">
-<h3 class="anchored" data-anchor-id="formulación-matemática">Formulación Matemática</h3>
-<p><strong>Variables de decisión:</strong> - <span class="math inline">\(x\)</span> = unidades del producto A - <span class="math inline">\(y\)</span> = unidades del producto B</p>
-<p><strong>Función objetivo:</strong></p>
+<section id="variable-de-decisión" class="level3">
+<h3 class="anchored" data-anchor-id="variable-de-decisión">Variable de decisión</h3>
 <p><span class="math display">\[
-\max \quad z = 3x + 4y
+x_i = \begin{cases} 1 &amp; \text{si el objeto } i \text{ se incluye en la mochila} \\ 0 &amp; \text{en caso contrario} \end{cases}
 \]</span></p>
-<p><strong>Restricciones:</strong></p>
+</section>
+<section id="modelo-completo" class="level3">
+<h3 class="anchored" data-anchor-id="modelo-completo">Modelo completo</h3>
 <p><span class="math display">\[
-\begin{align}
-x + 2y &amp;\leq 14 \quad \text{(restricción de material)} \\
-3x - y &amp;\geq 0 \quad \text{(restricción técnica)} \\
-x, y &amp;\geq 0 \quad \text{(no negatividad)}
-\end{align}
+\begin{aligned}
+\max \quad &amp; \sum_{i=1}^{n} v_i \, x_i \\
+\text{s.a.} \quad &amp; \sum_{i=1}^{n} w_i \, x_i \leq W \\
+&amp; x_i \in \{0, 1\}, \quad i = 1, \dots, n
+\end{aligned}
 \]</span></p>
+<p>Este es un problema de <strong>programación entera binaria</strong>: una función objetivo lineal, una restricción lineal, y variables binarias.</p>
 </section>
 </section>
-<section id="resolución-con-python" class="level2">
-<h2 class="anchored" data-anchor-id="resolución-con-python">Resolución con Python</h2>
-<p>Podemos resolver este problema usando OR-Tools:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ortools.linear_solver <span class="im">import</span> pywraplp</span>
+<section id="ejemplo-numérico" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-numérico">Ejemplo numérico</h2>
+<p>Supongamos 4 objetos y una mochila con capacidad <span class="math inline">\(W = 10\)</span> kg:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Objeto</th>
+<th style="text-align: center;">Valor (<span class="math inline">\(v_i\)</span>)</th>
+<th style="text-align: center;">Peso (<span class="math inline">\(w_i\)</span>) kg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+<p>¿Cuál es la combinación óptima?</p>
+</section>
+<section id="resolución-con-python-y-pyomo" class="level2">
+<h2 class="anchored" data-anchor-id="resolución-con-python-y-pyomo">Resolución con Python y Pyomo</h2>
+<p>Usaremos <a href="https://www.pyomo.org/">Pyomo</a>, un framework de modelado algebraico en Python, con el solver GLPK.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyomo.environ <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear el solver</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>solver <span class="op">=</span> pywraplp.Solver.CreateSolver(<span class="st">'GLOP'</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables de decisión</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> solver.NumVar(<span class="dv">0</span>, solver.infinity(), <span class="st">'x'</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> solver.NumVar(<span class="dv">0</span>, solver.infinity(), <span class="st">'y'</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Función objetivo: maximizar 3x + 4y</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>solver.Maximize(<span class="dv">3</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">4</span><span class="op">*</span>y)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Restricciones</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>solver.Add(x <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>y <span class="op">&lt;=</span> <span class="dv">14</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>solver.Add(<span class="dv">3</span><span class="op">*</span>x <span class="op">-</span> y <span class="op">&gt;=</span> <span class="dv">0</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Resolver</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>status <span class="op">=</span> solver.Solve()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Datos ---</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>valores <span class="op">=</span> {<span class="dv">1</span>: <span class="dv">10</span>, <span class="dv">2</span>: <span class="dv">6</span>, <span class="dv">3</span>: <span class="dv">7</span>, <span class="dv">4</span>: <span class="dv">3</span>}</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>pesos   <span class="op">=</span> {<span class="dv">1</span>: <span class="dv">5</span>,  <span class="dv">2</span>: <span class="dv">4</span>, <span class="dv">3</span>: <span class="dv">3</span>, <span class="dv">4</span>: <span class="dv">2</span>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>capacidad <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Modelo ---</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> ConcreteModel(<span class="st">"Mochila"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>model.I <span class="op">=</span> Set(initialize<span class="op">=</span>valores.keys())</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>model.x <span class="op">=</span> Var(model.I, domain<span class="op">=</span>Binary)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Función objetivo: maximizar valor total</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>model.obj <span class="op">=</span> Objective(</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    expr<span class="op">=</span><span class="bu">sum</span>(valores[i] <span class="op">*</span> model.x[i] <span class="cf">for</span> i <span class="kw">in</span> model.I),</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    sense<span class="op">=</span>maximize</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> status <span class="op">==</span> pywraplp.Solver.OPTIMAL:</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Solución óptima encontrada:'</span>)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'x = </span><span class="sc">{</span>x<span class="sc">.</span>solution_value()<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'y = </span><span class="sc">{</span>y<span class="sc">.</span>solution_value()<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Ganancia máxima = $</span><span class="sc">{</span>solver<span class="sc">.</span>Objective()<span class="sc">.</span>Value()<span class="sc">:.2f}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Salida:</strong></p>
-<pre><code>Solución óptima encontrada:
-x = 2.00
-y = 6.00
-Ganancia máxima = $30.00</code></pre>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Restricción de capacidad</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>model.peso_max <span class="op">=</span> Constraint(</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    expr<span class="op">=</span><span class="bu">sum</span>(pesos[i] <span class="op">*</span> model.x[i] <span class="cf">for</span> i <span class="kw">in</span> model.I) <span class="op">&lt;=</span> capacidad</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Resolver ---</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>solver <span class="op">=</span> SolverFactory(<span class="st">'glpk'</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> solver.solve(model, tee<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Resultados ---</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"SOLUCIÓN ÓPTIMA"</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>seleccionados <span class="op">=</span> []</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> model.I:</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> model.x[i].value <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        seleccionados.append(i)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"  Objeto </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: valor=</span><span class="sc">{</span>valores[i]<span class="sc">}</span><span class="ss">, peso=</span><span class="sc">{</span>pesos[i]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>peso_total <span class="op">=</span> <span class="bu">sum</span>(pesos[i] <span class="cf">for</span> i <span class="kw">in</span> seleccionados)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Valor total:  </span><span class="sc">{</span><span class="bu">int</span>(model.obj())<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Peso total:   </span><span class="sc">{</span>peso_total<span class="sc">}</span><span class="ss"> / </span><span class="sc">{</span>capacidad<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Solución esperada</strong>: se seleccionan los objetos 1, 3 y 4, con un valor total de 20 y un peso total de 10.</p>
 </section>
-<section id="tipos-de-problemas-de-optimización" class="level2">
-<h2 class="anchored" data-anchor-id="tipos-de-problemas-de-optimización">Tipos de Problemas de Optimización</h2>
-<p>En este blog exploraremos diferentes tipos:</p>
+<section id="por-qué-es-importante" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-es-importante">¿Por qué es importante?</h2>
+<p>El problema de la mochila no es solo un ejercicio académico. Aparece como subproblema en:</p>
 <ul>
-<li><strong>Programación Lineal (LP)</strong>: Función objetivo y restricciones lineales</li>
-<li><strong>Programación Entera (IP/MIP)</strong>: Variables que deben ser enteros</li>
-<li><strong>Problemas de Ruteo (VRP)</strong>: Optimización de rutas de vehículos</li>
-<li><strong>Scheduling</strong>: Asignación óptima de recursos en el tiempo</li>
-<li><strong>Metaheurísticas</strong>: Algoritmos aproximados para problemas complejos</li>
+<li><strong>Carga de contenedores</strong>: selección de productos a transportar.</li>
+<li><strong>Presupuesto de capital</strong>: selección de proyectos de inversión con presupuesto limitado.</li>
+<li><strong>Cutting stock</strong>: corte óptimo de materiales.</li>
+<li><strong>Criptografía</strong>: sistemas basados en el problema de la mochila.</li>
+<li><strong>Column generation</strong>: el subproblema en muchos métodos de descomposición es un knapsack.</li>
 </ul>
 </section>
-<section id="próximos-posts" class="level2">
-<h2 class="anchored" data-anchor-id="próximos-posts">Próximos Posts</h2>
-<p>En futuros artículos profundizaré en:</p>
-<ol type="1">
-<li>Vehicle Routing Problem (VRP) - mi área de investigación</li>
-<li>Optimización de horarios universitarios</li>
-<li>Algoritmos genéticos y metaheurísticas</li>
-<li>Uso avanzado de AMPL y Python</li>
-</ol>
-<hr>
-<p>¿Tienes preguntas sobre optimización? Escríbeme en <a href="https://github.com/yosbijgolles">GitHub</a> o comenta en el video de YouTube cuando lo publique.</p>
+<section id="variantes" class="level2">
+<h2 class="anchored" data-anchor-id="variantes">Variantes</h2>
+<p>El problema tiene varias extensiones importantes:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variante</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Mochila fraccionaria</strong></td>
+<td>Se permite llevar fracciones de objetos. Resoluble en <span class="math inline">\(O(n \log n)\)</span> con un algoritmo greedy.</td>
+</tr>
+<tr class="even">
+<td><strong>Mochila 0-1 múltiple</strong></td>
+<td>Varias mochilas, cada objeto se asigna a lo más a una.</td>
+</tr>
+<tr class="odd">
+<td><strong>Mochila multidimensional</strong></td>
+<td>Múltiples restricciones de capacidad (peso, volumen, etc.).</td>
+</tr>
+<tr class="even">
+<td><strong>Mochila con repetición</strong></td>
+<td>Se pueden tomar múltiples copias de cada objeto.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="complejidad-computacional" class="level2">
+<h2 class="anchored" data-anchor-id="complejidad-computacional">Complejidad computacional</h2>
+<p>El problema de la mochila 0-1 es <strong>NP-hard</strong>, lo que significa que no se conoce un algoritmo eficiente (polinomial) para resolverlo en el caso general. Sin embargo:</p>
+<ul>
+<li>Existe un algoritmo de <strong>programación dinámica</strong> con complejidad <span class="math inline">\(O(nW)\)</span> (pseudopolinomial).</li>
+<li>Para instancias prácticas, los solvers modernos (GLPK, Gurobi, CPLEX) lo resuelven eficientemente mediante branch and bound.</li>
+<li>Existen <strong>esquemas de aproximación</strong> (FPTAS) que garantizan soluciones cercanas al óptimo.</li>
+</ul>
+</section>
+<section id="conclusión" class="level2">
+<h2 class="anchored" data-anchor-id="conclusión">Conclusión</h2>
+<p>El problema de la mochila es un punto de entrada natural a la optimización combinatoria y la programación entera. Su formulación es simple, pero encierra la complejidad fundamental de decidir en contextos discretos. Dominarlo es una base sólida para abordar problemas más complejos.</p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<ul>
+<li>Kellerer, H., Pferschy, U., &amp; Pisinger, D. (2004). <em>Knapsack Problems</em>. Springer.</li>
+<li>Wolsey, L. A. (2020). <em>Integer Programming</em>. Wiley.</li>
+<li>Pyomo Documentation: <a href="https://www.pyomo.org/">pyomo.org</a></li>
+</ul>
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{j_golles2025,
+  author = {J Golles, Yosbi},
+  title = {El Problema de la Mochila},
+  date = {2025-02-15},
+  langid = {es}
+}
+</code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-j_golles2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+J Golles, Yosbi. 2025. <span>“El Problema de la Mochila.”</span>
+February 15, 2025.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -382,12 +499,12 @@ Ganancia máxima = $30.00</code></pre>
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Copiado");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Copiado");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -758,6 +875,34 @@ Ganancia máxima = $30.00</code></pre>
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 Yosbi J. Golles — Inteligencia Especializada</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>
+window.addEventListener("load", function() {
+  document.querySelectorAll(".quarto-title-meta-contents a[href*='yosbijgolles']").forEach(function(el) {
+    if (!el.querySelector(".author-avatar")) {
+      var img = document.createElement("img");
+      img.src = document.querySelector("meta[name='quarto:offset']")
+        ? document.querySelector("meta[name='quarto:offset']").content + "profile.png"
+        : "/profile.png";
+      img.alt = "";
+      img.className = "author-avatar";
+      el.prepend(img);
+    }
+  });
+});
+</script>
 
 
 

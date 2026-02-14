@@ -1,34 +1,51 @@
 project:
   type: website
   output-dir: docs
-  resources:
-    - profile.jpg
 
 website:
-  title: "Inteligencia Especializada"
+  title: "Home"
+  description: "Matemática aplicada · Optimización · Investigación de Operaciones · IA"
   navbar:
+    background: dark
     left:
-      - text: "Inicio"
-        href: index.qmd
-      - text: "Blog"
-        href: blog.qmd
-      - text: "Proyectos"
-        href: projects.qmd
-      - text: "Videos"
-        href: videos.qmd
-      - text: "Sobre mí"
-        href: about.qmd
+      - href: blog.qmd
+        text: Blog
+      - href: about.qmd
+        text: Sobre mí
     right:
       - icon: github
         href: https://github.com/yosbijgolles
+      - icon: linkedin
+        href: https://linkedin.com/in/yosbijgolles
       - icon: youtube
-        href: https://youtube.com/yosbijgolles
+        href: https://www.youtube.com/@yosbijgolles
+  page-footer:
+    center: "© 2026 Yosbi J. Golles — Inteligencia Especializada"
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-    toc-depth: 3
+    lang: es
+    language:
+      title-block-author-single: "Autor"
     code-fold: false
     code-tools: false
+    include-after-body:
+      text: |
+        <script>
+        window.addEventListener("load", function() {
+          document.querySelectorAll(".quarto-title-meta-contents a[href*='yosbijgolles']").forEach(function(el) {
+            if (!el.querySelector(".author-avatar")) {
+              var img = document.createElement("img");
+              img.src = document.querySelector("meta[name='quarto:offset']")
+                ? document.querySelector("meta[name='quarto:offset']").content + "profile.png"
+                : "/profile.png";
+              img.alt = "";
+              img.className = "author-avatar";
+              el.prepend(img);
+            }
+          });
+        });
+        </script>

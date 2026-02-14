@@ -1,5 +1,32 @@
 ---
-title: "About"
----
+title: "Yosbi J. Golles"
+image: profile.png
+about:
+  template: trestles
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/yosbijgolles
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/yosbijgolles
+    - icon: youtube 
+      text: Youtube 
+      href: https://www.youtube.com/@yosbijgolles
+--- 
 
-About this site
+## Sobre mí
+
+Soy matemático con interés en optimización, investigación de operaciones e inteligencia artificial. Me enfoco en la aplicación de herramientas cuantitativas para la toma de decisiones en problemas del mundo real.
+
+## Inteligencia Especializada
+
+Este blog nace como parte de mi proceso de aprendizaje en:
+
+- **Matemática aplicada**: fundamentos y herramientas cuantitativas.
+- **Optimización matemática**: programación lineal, entera, no lineal y combinatoria.
+- **Investigación de operaciones**: modelado y resolución de problemas de decisión.
+- **Inteligencia artificial**: machine learning, deep learning y sus conexiones con la optimización.
+
+El objetivo es documentar, compartir y profundizar en estos temas con rigor y claridad.

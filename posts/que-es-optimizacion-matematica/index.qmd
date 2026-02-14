@@ -1,0 +1,101 @@
+---
+title: "¿Qué es la Optimización Matemática?"
+subtitle: "Una introducción a la programación matemática y sus fundamentos"
+date: "2025-02-14"
+description: "Introducción a la programación matemática: formulación general, clasificación de problemas (LP, IP, NLP) y aplicaciones."
+categories: [optimización matemática, fundamentos, programación matemática]
+---
+
+## Introducción
+
+La **optimización matemática** (o **programación matemática**) es la disciplina que estudia cómo encontrar la mejor solución posible a un problema, sujeto a restricciones. Es el lenguaje formal para responder preguntas del tipo: *¿cuál es la mejor decisión que puedo tomar dado un conjunto de limitaciones?*
+
+Su alcance va desde la logística y las finanzas hasta el entrenamiento de modelos de inteligencia artificial.
+
+## Formulación general
+
+Todo problema de optimización se puede expresar de la siguiente forma:
+
+$$
+\begin{aligned}
+\min_{x} \quad & f(x) \\
+\text{s.a.} \quad & g_i(x) \leq 0, \quad i = 1, \dots, m \\
+& h_j(x) = 0, \quad j = 1, \dots, p \\
+& x \in \mathcal{X}
+\end{aligned}
+$$
+
+Donde:
+
+- $f(x)$ es la **función objetivo**: lo que queremos minimizar (o maximizar).
+- $g_i(x) \leq 0$ son las **restricciones de desigualdad**.
+- $h_j(x) = 0$ son las **restricciones de igualdad**.
+- $\mathcal{X}$ es el **dominio factible** de las variables de decisión.
+
+La naturaleza de $f$, $g$, $h$ y $\mathcal{X}$ determina el tipo de problema y, por tanto, los métodos de solución disponibles.
+
+## Clasificación de los problemas
+
+### Programación lineal (LP)
+
+Cuando la función objetivo y todas las restricciones son lineales:
+
+$$
+\min_{x} \quad c^T x \quad \text{s.a.} \quad Ax \leq b, \quad x \geq 0
+$$
+
+Es el tipo de problema más estudiado. El **método simplex** y los **métodos de punto interior** son los algoritmos clásicos para resolverlo. Aplicaciones: planificación de producción, mezclas, transporte.
+
+### Programación entera (IP)
+
+Cuando las variables de decisión deben ser enteras: $x \in \mathbb{Z}^n$. Si algunas variables son enteras y otras continuas, hablamos de **programación entera mixta (MIP)**.
+
+$$
+\min_{x} \quad c^T x \quad \text{s.a.} \quad Ax \leq b, \quad x \in \mathbb{Z}^n_{\geq 0}
+$$
+
+Estos problemas son computacionalmente más difíciles (NP-hard en general). Se resuelven con técnicas como **branch and bound**, **branch and cut** y **planos de corte**. Aplicaciones: asignación, scheduling, diseño de redes.
+
+### Programación no lineal (NLP)
+
+Cuando $f$, $g_i$ o $h_j$ son funciones no lineales. La dificultad depende de si el problema es **convexo** o **no convexo**:
+
+- **Convexo**: todo óptimo local es global. Métodos eficientes disponibles.
+- **No convexo**: pueden existir múltiples óptimos locales. Problema mucho más difícil.
+
+### Otros tipos
+
+| Tipo | Característica |
+|------|----------------|
+| Programación cuadrática (QP) | $f(x)$ cuadrática, restricciones lineales |
+| Programación estocástica | Parámetros con incertidumbre |
+| Optimización multiobjetivo | Varias funciones objetivo simultáneas |
+| Optimización combinatoria | Variables discretas, estructuras combinatorias |
+
+## ¿Por qué importa?
+
+La optimización matemática está en todas partes:
+
+- **Logística**: rutas de distribución, localización de almacenes.
+- **Finanzas**: optimización de portafolios, gestión de riesgos.
+- **Energía**: despacho económico, planificación de generación.
+- **Inteligencia artificial**: el entrenamiento de redes neuronales es un problema de optimización no convexa a gran escala.
+- **Industria**: planificación de producción, cadenas de suministro.
+
+Cada vez que un algoritmo de machine learning "aprende", está resolviendo un problema de optimización.
+
+## ¿Optimización vs. Programación Matemática?
+
+Los términos se usan de forma intercambiable. "Programación matemática" es el nombre clásico (donde "programación" viene de "planificación", no de programación de computadoras). "Optimización matemática" es el término más moderno y descriptivo.
+
+## Conclusión
+
+La optimización matemática es el puente formal entre un problema del mundo real y su mejor solución posible. Entender su estructura y clasificación es el primer paso para poder modelar y resolver problemas de decisión con rigor.
+
+En próximos posts exploraremos problemas específicos, empezando por clásicos como el **problema de la mochila**.
+
+## Referencias
+
+- Bertsimas, D., & Tsitsiklis, J. N. (1997). *Introduction to Linear Optimization*. Athena Scientific.
+- Boyd, S., & Vandenberghe, L. (2004). *Convex Optimization*. Cambridge University Press.
+- Wolsey, L. A. (2020). *Integer Programming*. Wiley.

@@ -2,141 +2,183 @@
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "Blog",
+    "title": "Inteligencia Especializada",
     "section": "",
-    "text": "Artículos sobre optimización matemática, algoritmos y aplicaciones en operations research.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVehicle Routing Problem (VRP): Conceptos Básicos\n\n\n\noptimización\n\nVRP\n\nlogística\n\n\n\nIntroducción al problema de ruteo de vehículos, uno de los problemas más estudiados en optimización combinatoria\n\n\n\n\n\nFeb 9, 2025\n\n\nYosbi J. Golles\n\n\n\n\n\n\n\n\n\n\n\n\nIntroducción a la Optimización Matemática\n\n\n\noptimización\n\nintroducción\n\n\n\nUna introducción a los conceptos fundamentales de optimización matemática y operations research\n\n\n\n\n\nFeb 8, 2025\n\n\nYosbi J. Golles\n\n\n\n\n\nNo matching items"
+    "text": "El Problema de la Mochila\n\n\nUn clásico de la optimización combinatoria\n\n\n\noptimización matemática\n\ninvestigación de operaciones\n\nprogramación entera\n\n\n\n\n\n\n15 feb 2025\n\n\nYosbi J Golles\n\n4 minutos\n\n\n\n\n\n\n\n\n\n\n\n¿Qué es la Optimización Matemática?\n\n\nUna introducción a la programación matemática y sus fundamentos\n\n\n\noptimización matemática\n\nfundamentos\n\nprogramación matemática\n\n\n\n\n\n\n14 feb 2025\n\n\nYosbi J Golles\n\n3 minutos\n\n\n\n\nNo hay resultados"
   },
   {
-    "objectID": "videos.html",
-    "href": "videos.html",
-    "title": "Videos de YouTube",
+    "objectID": "posts/problema-de-la-mochila/index.html",
+    "href": "posts/problema-de-la-mochila/index.html",
+    "title": "El Problema de la Mochila",
     "section": "",
-    "text": "Próximamente estaré publicando videos sobre:\n\nIntroducción a la optimización matemática\nProgramación lineal y entera\nProblemas de ruteo de vehículos (VRP)\nHerramientas: Python, AMPL, OR-Tools\n\n¡Suscríbete para no perderte ningún video!\n→ Visitar canal"
+    "text": "El problema de la mochila (knapsack problem) es uno de los problemas más conocidos y estudiados en optimización combinatoria. Su enunciado es sencillo: dada una mochila con capacidad limitada y un conjunto de objetos, cada uno con un peso y un valor, ¿cómo elegir qué objetos llevar para maximizar el valor total sin exceder la capacidad?\nA pesar de su sencillez, este problema es NP-hard y aparece como subproblema en muchas aplicaciones industriales reales."
   },
   {
-    "objectID": "videos.html#canal-de-youtube",
-    "href": "videos.html#canal-de-youtube",
-    "title": "Videos de YouTube",
+    "objectID": "posts/problema-de-la-mochila/index.html#introducción",
+    "href": "posts/problema-de-la-mochila/index.html#introducción",
+    "title": "El Problema de la Mochila",
     "section": "",
-    "text": "Próximamente estaré publicando videos sobre:\n\nIntroducción a la optimización matemática\nProgramación lineal y entera\nProblemas de ruteo de vehículos (VRP)\nHerramientas: Python, AMPL, OR-Tools\n\n¡Suscríbete para no perderte ningún video!\n→ Visitar canal"
+    "text": "El problema de la mochila (knapsack problem) es uno de los problemas más conocidos y estudiados en optimización combinatoria. Su enunciado es sencillo: dada una mochila con capacidad limitada y un conjunto de objetos, cada uno con un peso y un valor, ¿cómo elegir qué objetos llevar para maximizar el valor total sin exceder la capacidad?\nA pesar de su sencillez, este problema es NP-hard y aparece como subproblema en muchas aplicaciones industriales reales."
   },
   {
-    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html",
-    "href": "posts/2025-02-09-vehicle-routing-problem/index.html",
-    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
-    "section": "",
-    "text": "El Vehicle Routing Problem (VRP) es un problema de optimización combinatoria que busca determinar las rutas óptimas para una flota de vehículos que deben visitar un conjunto de clientes."
+    "objectID": "posts/problema-de-la-mochila/index.html#formulación-matemática",
+    "href": "posts/problema-de-la-mochila/index.html#formulación-matemática",
+    "title": "El Problema de la Mochila",
+    "section": "Formulación matemática",
+    "text": "Formulación matemática\n\nDatos del problema\n\n\n\nSímbolo\nDescripción\n\n\n\n\n\\(n\\)\nNúmero de objetos disponibles\n\n\n\\(v_i\\)\nValor del objeto \\(i\\)\n\n\n\\(w_i\\)\nPeso del objeto \\(i\\)\n\n\n\\(W\\)\nCapacidad máxima de la mochila\n\n\n\n\n\nVariable de decisión\n\\[\nx_i = \\begin{cases} 1 & \\text{si el objeto } i \\text{ se incluye en la mochila} \\\\ 0 & \\text{en caso contrario} \\end{cases}\n\\]\n\n\nModelo completo\n\\[\n\\begin{aligned}\n\\max \\quad & \\sum_{i=1}^{n} v_i \\, x_i \\\\\n\\text{s.a.} \\quad & \\sum_{i=1}^{n} w_i \\, x_i \\leq W \\\\\n& x_i \\in \\{0, 1\\}, \\quad i = 1, \\dots, n\n\\end{aligned}\n\\]\nEste es un problema de programación entera binaria: una función objetivo lineal, una restricción lineal, y variables binarias."
   },
   {
-    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#qué-es-el-vehicle-routing-problem",
-    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#qué-es-el-vehicle-routing-problem",
-    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
-    "section": "",
-    "text": "El Vehicle Routing Problem (VRP) es un problema de optimización combinatoria que busca determinar las rutas óptimas para una flota de vehículos que deben visitar un conjunto de clientes."
+    "objectID": "posts/problema-de-la-mochila/index.html#ejemplo-numérico",
+    "href": "posts/problema-de-la-mochila/index.html#ejemplo-numérico",
+    "title": "El Problema de la Mochila",
+    "section": "Ejemplo numérico",
+    "text": "Ejemplo numérico\nSupongamos 4 objetos y una mochila con capacidad \\(W = 10\\) kg:\n\n\n\nObjeto\nValor (\\(v_i\\))\nPeso (\\(w_i\\)) kg\n\n\n\n\n1\n10\n5\n\n\n2\n6\n4\n\n\n3\n7\n3\n\n\n4\n3\n2\n\n\n\n¿Cuál es la combinación óptima?"
   },
   {
-    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#formulación-básica",
-    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#formulación-básica",
-    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
-    "section": "Formulación Básica",
-    "text": "Formulación Básica\nDado: - Un depósito central - Un conjunto de clientes con demandas - Una flota de vehículos con capacidad limitada\nObjetivo: Minimizar la distancia total recorrida (o el costo) mientras se satisfacen todas las demandas."
+    "objectID": "posts/problema-de-la-mochila/index.html#resolución-con-python-y-pyomo",
+    "href": "posts/problema-de-la-mochila/index.html#resolución-con-python-y-pyomo",
+    "title": "El Problema de la Mochila",
+    "section": "Resolución con Python y Pyomo",
+    "text": "Resolución con Python y Pyomo\nUsaremos Pyomo, un framework de modelado algebraico en Python, con el solver GLPK.\nfrom pyomo.environ import *\n\n# --- Datos ---\nvalores = {1: 10, 2: 6, 3: 7, 4: 3}\npesos   = {1: 5,  2: 4, 3: 3, 4: 2}\ncapacidad = 10\n\n# --- Modelo ---\nmodel = ConcreteModel(\"Mochila\")\n\nmodel.I = Set(initialize=valores.keys())\nmodel.x = Var(model.I, domain=Binary)\n\n# Función objetivo: maximizar valor total\nmodel.obj = Objective(\n    expr=sum(valores[i] * model.x[i] for i in model.I),\n    sense=maximize\n)\n\n# Restricción de capacidad\nmodel.peso_max = Constraint(\n    expr=sum(pesos[i] * model.x[i] for i in model.I) &lt;= capacidad\n)\n\n# --- Resolver ---\nsolver = SolverFactory('glpk')\nresultado = solver.solve(model, tee=False)\n\n# --- Resultados ---\nprint(\"=\" * 40)\nprint(\"SOLUCIÓN ÓPTIMA\")\nprint(\"=\" * 40)\nseleccionados = []\nfor i in model.I:\n    if model.x[i].value == 1:\n        seleccionados.append(i)\n        print(f\"  Objeto {i}: valor={valores[i]}, peso={pesos[i]}\")\n\npeso_total = sum(pesos[i] for i in seleccionados)\nprint(f\"\\nValor total:  {int(model.obj())}\")\nprint(f\"Peso total:   {peso_total} / {capacidad}\")\nSolución esperada: se seleccionan los objetos 1, 3 y 4, con un valor total de 20 y un peso total de 10."
   },
   {
-    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#variantes-del-vrp",
-    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#variantes-del-vrp",
-    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
-    "section": "Variantes del VRP",
-    "text": "Variantes del VRP\nExisten múltiples variantes según las restricciones:\n\n\n\nVariante\nDescripción\n\n\n\n\nCVRP\nCapacitated VRP - vehículos con capacidad limitada\n\n\nVRPTW\nVRP with Time Windows - ventanas de tiempo para visitas\n\n\nVRPPD\nVRP with Pickup and Delivery - recolección y entrega\n\n\nMDVRP\nMulti-Depot VRP - múltiples depósitos"
+    "objectID": "posts/problema-de-la-mochila/index.html#por-qué-es-importante",
+    "href": "posts/problema-de-la-mochila/index.html#por-qué-es-importante",
+    "title": "El Problema de la Mochila",
+    "section": "¿Por qué es importante?",
+    "text": "¿Por qué es importante?\nEl problema de la mochila no es solo un ejercicio académico. Aparece como subproblema en:\n\nCarga de contenedores: selección de productos a transportar.\nPresupuesto de capital: selección de proyectos de inversión con presupuesto limitado.\nCutting stock: corte óptimo de materiales.\nCriptografía: sistemas basados en el problema de la mochila.\nColumn generation: el subproblema en muchos métodos de descomposición es un knapsack."
   },
   {
-    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#ejemplo-simple-con-or-tools",
-    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#ejemplo-simple-con-or-tools",
-    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
-    "section": "Ejemplo Simple con OR-Tools",
-    "text": "Ejemplo Simple con OR-Tools\nfrom ortools.constraint_solver import routing_enums_pb2\nfrom ortools.constraint_solver import pywrapcp\n\ndef crear_modelo_datos():\n    data = {}\n    data['distance_matrix'] = [\n        [0, 10, 15, 20],\n        [10, 0, 35, 25],\n        [15, 35, 0, 30],\n        [20, 25, 30, 0],\n    ]\n    data['num_vehicles'] = 1\n    data['depot'] = 0\n    return data\n\ndata = crear_modelo_datos()\nmanager = pywrapcp.RoutingIndexManager(\n    len(data['distance_matrix']),\n    data['num_vehicles'],\n    data['depot']\n)\nrouting = pywrapcp.RoutingModel(manager)\n\n# Definir función de costo\ndef distance_callback(from_index, to_index):\n    from_node = manager.IndexToNode(from_index)\n    to_node = manager.IndexToNode(to_index)\n    return data['distance_matrix'][from_node][to_node]\n\ntransit_callback_index = routing.RegisterTransitCallback(distance_callback)\nrouting.SetArcCostEvaluatorOfAllVehicles(transit_callback_index)\n\n# Resolver\nsearch_parameters = pywrapcp.DefaultRoutingSearchParameters()\nsolution = routing.SolveWithParameters(search_parameters)"
+    "objectID": "posts/problema-de-la-mochila/index.html#variantes",
+    "href": "posts/problema-de-la-mochila/index.html#variantes",
+    "title": "El Problema de la Mochila",
+    "section": "Variantes",
+    "text": "Variantes\nEl problema tiene varias extensiones importantes:\n\n\n\n\n\n\n\nVariante\nDescripción\n\n\n\n\nMochila fraccionaria\nSe permite llevar fracciones de objetos. Resoluble en \\(O(n \\log n)\\) con un algoritmo greedy.\n\n\nMochila 0-1 múltiple\nVarias mochilas, cada objeto se asigna a lo más a una.\n\n\nMochila multidimensional\nMúltiples restricciones de capacidad (peso, volumen, etc.).\n\n\nMochila con repetición\nSe pueden tomar múltiples copias de cada objeto."
   },
   {
-    "objectID": "posts/2025-02-09-vehicle-routing-problem/index.html#aplicaciones-reales",
-    "href": "posts/2025-02-09-vehicle-routing-problem/index.html#aplicaciones-reales",
-    "title": "Vehicle Routing Problem (VRP): Conceptos Básicos",
-    "section": "Aplicaciones Reales",
-    "text": "Aplicaciones Reales\n\nDistribución de paquetería\nRecolección de residuos\nTransporte escolar\nServicios de emergencia\n\n\nEn próximos posts exploraremos algoritmos específicos para resolver el VRP."
+    "objectID": "posts/problema-de-la-mochila/index.html#complejidad-computacional",
+    "href": "posts/problema-de-la-mochila/index.html#complejidad-computacional",
+    "title": "El Problema de la Mochila",
+    "section": "Complejidad computacional",
+    "text": "Complejidad computacional\nEl problema de la mochila 0-1 es NP-hard, lo que significa que no se conoce un algoritmo eficiente (polinomial) para resolverlo en el caso general. Sin embargo:\n\nExiste un algoritmo de programación dinámica con complejidad \\(O(nW)\\) (pseudopolinomial).\nPara instancias prácticas, los solvers modernos (GLPK, Gurobi, CPLEX) lo resuelven eficientemente mediante branch and bound.\nExisten esquemas de aproximación (FPTAS) que garantizan soluciones cercanas al óptimo."
+  },
+  {
+    "objectID": "posts/problema-de-la-mochila/index.html#conclusión",
+    "href": "posts/problema-de-la-mochila/index.html#conclusión",
+    "title": "El Problema de la Mochila",
+    "section": "Conclusión",
+    "text": "Conclusión\nEl problema de la mochila es un punto de entrada natural a la optimización combinatoria y la programación entera. Su formulación es simple, pero encierra la complejidad fundamental de decidir en contextos discretos. Dominarlo es una base sólida para abordar problemas más complejos."
+  },
+  {
+    "objectID": "posts/problema-de-la-mochila/index.html#referencias",
+    "href": "posts/problema-de-la-mochila/index.html#referencias",
+    "title": "El Problema de la Mochila",
+    "section": "Referencias",
+    "text": "Referencias\n\nKellerer, H., Pferschy, U., & Pisinger, D. (2004). Knapsack Problems. Springer.\nWolsey, L. A. (2020). Integer Programming. Wiley.\nPyomo Documentation: pyomo.org"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Yosbi J. Golles",
     "section": "",
-    "text": "About this site"
+    "text": "Soy matemático con interés en optimización, investigación de operaciones e inteligencia artificial. Me enfoco en la aplicación de herramientas cuantitativas para la toma de decisiones en problemas del mundo real."
+  },
+  {
+    "objectID": "about.html#sobre-mí",
+    "href": "about.html#sobre-mí",
+    "title": "Yosbi J. Golles",
+    "section": "",
+    "text": "Soy matemático con interés en optimización, investigación de operaciones e inteligencia artificial. Me enfoco en la aplicación de herramientas cuantitativas para la toma de decisiones en problemas del mundo real."
+  },
+  {
+    "objectID": "about.html#inteligencia-especializada",
+    "href": "about.html#inteligencia-especializada",
+    "title": "Yosbi J. Golles",
+    "section": "Inteligencia Especializada",
+    "text": "Inteligencia Especializada\nEste blog nace como parte de mi proceso de aprendizaje en:\n\nMatemática aplicada: fundamentos y herramientas cuantitativas.\nOptimización matemática: programación lineal, entera, no lineal y combinatoria.\nInvestigación de operaciones: modelado y resolución de problemas de decisión.\nInteligencia artificial: machine learning, deep learning y sus conexiones con la optimización.\n\nEl objetivo es documentar, compartir y profundizar en estos temas con rigor y claridad."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Inteligencia Especializada",
+    "title": "Yosbi J Golles",
     "section": "",
-    "text": "bla bla bla"
+    "text": "Bienvenido a Inteligencia Especializada, un espacio dedicado a explorar las herramientas matemáticas y computacionales que permiten tomar mejores decisiones.\nMis principales intereses giran en torno a la optimización matemática y la inteligencia artificial, con aplicaciones en logística, cadenas de suministro, planificación de producción, asignación de recursos y análisis de datos."
   },
   {
-    "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html",
-    "href": "posts/2025-02-08-introduccion-optimizacion/index.html",
-    "title": "Introducción a la Optimización Matemática",
+    "objectID": "index.html#áreas-de-interés",
+    "href": "index.html#áreas-de-interés",
+    "title": "Yosbi J Golles",
+    "section": "Áreas de interés",
+    "text": "Áreas de interés\nOptimización Matemática — Programación lineal, entera mixta, no lineal y combinatoria. Modelado algebraico con herramientas como Pyomo, AMPL y solvers como Gurobi, CPLEX y GLPK.\nInvestigación de Operaciones — Metodologías cuantitativas para el análisis y diseño de sistemas complejos: ruteo de vehículos, scheduling, localización de instalaciones, teoría de colas.\nMatemática Aplicada — Álgebra lineal, análisis convexo, probabilidad y estadística como fundamentos para el modelado y la toma de decisiones.\nInteligencia Artificial — Machine learning, deep learning y sus conexiones con la optimización. Enfoques híbridos entre OR y ML."
+  },
+  {
+    "objectID": "index.html#publicaciones-recientes",
+    "href": "index.html#publicaciones-recientes",
+    "title": "Yosbi J Golles",
+    "section": "Publicaciones recientes",
+    "text": "Publicaciones recientes\n\n\n\n\n\nEl Problema de la Mochila\n\n\nUn clásico de la optimización combinatoria\n\n\n\noptimización matemática\n\ninvestigación de operaciones\n\nprogramación entera\n\n\n\n\n\n\n15 feb 2025\n\n\n\n\n\n\n\n¿Qué es la Optimización Matemática?\n\n\nUna introducción a la programación matemática y sus fundamentos\n\n\n\noptimización matemática\n\nfundamentos\n\nprogramación matemática\n\n\n\n\n\n\n14 feb 2025\n\n\n\n\n\nNo hay resultados\n\nVer todas las publicaciones →"
+  },
+  {
+    "objectID": "index.html#contacto",
+    "href": "index.html#contacto",
+    "title": "Yosbi J Golles",
+    "section": "Contacto",
+    "text": "Contacto\nTodo el contenido y código de este blog está disponible en mi perfil de GitHub. No dudes en contactarme para discutir temas de investigación, casos de estudio o proyectos de consultoría."
+  },
+  {
+    "objectID": "posts/que-es-optimizacion-matematica/index.html",
+    "href": "posts/que-es-optimizacion-matematica/index.html",
+    "title": "¿Qué es la Optimización Matemática?",
     "section": "",
-    "text": "La optimización matemática es el proceso de encontrar la mejor solución posible a un problema, sujeto a ciertas restricciones. Es una herramienta fundamental en Operations Research y tiene aplicaciones en logística, finanzas, manufactura, y muchos otros campos."
+    "text": "La optimización matemática (o programación matemática) es la disciplina que estudia cómo encontrar la mejor solución posible a un problema, sujeto a restricciones. Es el lenguaje formal para responder preguntas del tipo: ¿cuál es la mejor decisión que puedo tomar dado un conjunto de limitaciones?\nSu alcance va desde la logística y las finanzas hasta el entrenamiento de modelos de inteligencia artificial."
   },
   {
-    "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html#qué-es-la-optimización-matemática",
-    "href": "posts/2025-02-08-introduccion-optimizacion/index.html#qué-es-la-optimización-matemática",
-    "title": "Introducción a la Optimización Matemática",
+    "objectID": "posts/que-es-optimizacion-matematica/index.html#introducción",
+    "href": "posts/que-es-optimizacion-matematica/index.html#introducción",
+    "title": "¿Qué es la Optimización Matemática?",
     "section": "",
-    "text": "La optimización matemática es el proceso de encontrar la mejor solución posible a un problema, sujeto a ciertas restricciones. Es una herramienta fundamental en Operations Research y tiene aplicaciones en logística, finanzas, manufactura, y muchos otros campos."
+    "text": "La optimización matemática (o programación matemática) es la disciplina que estudia cómo encontrar la mejor solución posible a un problema, sujeto a restricciones. Es el lenguaje formal para responder preguntas del tipo: ¿cuál es la mejor decisión que puedo tomar dado un conjunto de limitaciones?\nSu alcance va desde la logística y las finanzas hasta el entrenamiento de modelos de inteligencia artificial."
   },
   {
-    "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html#componentes-de-un-problema-de-optimización",
-    "href": "posts/2025-02-08-introduccion-optimizacion/index.html#componentes-de-un-problema-de-optimización",
-    "title": "Introducción a la Optimización Matemática",
-    "section": "Componentes de un Problema de Optimización",
-    "text": "Componentes de un Problema de Optimización\nTodo problema de optimización tiene tres elementos clave:\n1. Variables de decisión: Las cantidades que queremos determinar\n2. Función objetivo: Lo que queremos maximizar o minimizar\n3. Restricciones: Las limitaciones que debemos respetar"
+    "objectID": "posts/que-es-optimizacion-matematica/index.html#formulación-general",
+    "href": "posts/que-es-optimizacion-matematica/index.html#formulación-general",
+    "title": "¿Qué es la Optimización Matemática?",
+    "section": "Formulación general",
+    "text": "Formulación general\nTodo problema de optimización se puede expresar de la siguiente forma:\n\\[\n\\begin{aligned}\n\\min_{x} \\quad & f(x) \\\\\n\\text{s.a.} \\quad & g_i(x) \\leq 0, \\quad i = 1, \\dots, m \\\\\n& h_j(x) = 0, \\quad j = 1, \\dots, p \\\\\n& x \\in \\mathcal{X}\n\\end{aligned}\n\\]\nDonde:\n\n\\(f(x)\\) es la función objetivo: lo que queremos minimizar (o maximizar).\n\\(g_i(x) \\leq 0\\) son las restricciones de desigualdad.\n\\(h_j(x) = 0\\) son las restricciones de igualdad.\n\\(\\mathcal{X}\\) es el dominio factible de las variables de decisión.\n\nLa naturaleza de \\(f\\), \\(g\\), \\(h\\) y \\(\\mathcal{X}\\) determina el tipo de problema y, por tanto, los métodos de solución disponibles."
   },
   {
-    "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html#ejemplo-clásico-programación-lineal",
-    "href": "posts/2025-02-08-introduccion-optimizacion/index.html#ejemplo-clásico-programación-lineal",
-    "title": "Introducción a la Optimización Matemática",
-    "section": "Ejemplo Clásico: Programación Lineal",
-    "text": "Ejemplo Clásico: Programación Lineal\nSupongamos que una empresa fabrica dos productos: A y B.\n\nProducto A genera $3 de ganancia\nProducto B genera $4 de ganancia\nHay limitaciones de recursos (materias primas, tiempo de máquina)\n\nQueremos maximizar las ganancias respetando las restricciones.\n\nFormulación Matemática\nVariables de decisión: - \\(x\\) = unidades del producto A - \\(y\\) = unidades del producto B\nFunción objetivo:\n\\[\n\\max \\quad z = 3x + 4y\n\\]\nRestricciones:\n\\[\n\\begin{align}\nx + 2y &\\leq 14 \\quad \\text{(restricción de material)} \\\\\n3x - y &\\geq 0 \\quad \\text{(restricción técnica)} \\\\\nx, y &\\geq 0 \\quad \\text{(no negatividad)}\n\\end{align}\n\\]"
+    "objectID": "posts/que-es-optimizacion-matematica/index.html#clasificación-de-los-problemas",
+    "href": "posts/que-es-optimizacion-matematica/index.html#clasificación-de-los-problemas",
+    "title": "¿Qué es la Optimización Matemática?",
+    "section": "Clasificación de los problemas",
+    "text": "Clasificación de los problemas\n\nProgramación lineal (LP)\nCuando la función objetivo y todas las restricciones son lineales:\n\\[\n\\min_{x} \\quad c^T x \\quad \\text{s.a.} \\quad Ax \\leq b, \\quad x \\geq 0\n\\]\nEs el tipo de problema más estudiado. El método simplex y los métodos de punto interior son los algoritmos clásicos para resolverlo. Aplicaciones: planificación de producción, mezclas, transporte.\n\n\nProgramación entera (IP)\nCuando las variables de decisión deben ser enteras: \\(x \\in \\mathbb{Z}^n\\). Si algunas variables son enteras y otras continuas, hablamos de programación entera mixta (MIP).\n\\[\n\\min_{x} \\quad c^T x \\quad \\text{s.a.} \\quad Ax \\leq b, \\quad x \\in \\mathbb{Z}^n_{\\geq 0}\n\\]\nEstos problemas son computacionalmente más difíciles (NP-hard en general). Se resuelven con técnicas como branch and bound, branch and cut y planos de corte. Aplicaciones: asignación, scheduling, diseño de redes.\n\n\nProgramación no lineal (NLP)\nCuando \\(f\\), \\(g_i\\) o \\(h_j\\) son funciones no lineales. La dificultad depende de si el problema es convexo o no convexo:\n\nConvexo: todo óptimo local es global. Métodos eficientes disponibles.\nNo convexo: pueden existir múltiples óptimos locales. Problema mucho más difícil.\n\n\n\nOtros tipos\n\n\n\n\n\n\n\nTipo\nCaracterística\n\n\n\n\nProgramación cuadrática (QP)\n\\(f(x)\\) cuadrática, restricciones lineales\n\n\nProgramación estocástica\nParámetros con incertidumbre\n\n\nOptimización multiobjetivo\nVarias funciones objetivo simultáneas\n\n\nOptimización combinatoria\nVariables discretas, estructuras combinatorias"
   },
   {
-    "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html#resolución-con-python",
-    "href": "posts/2025-02-08-introduccion-optimizacion/index.html#resolución-con-python",
-    "title": "Introducción a la Optimización Matemática",
-    "section": "Resolución con Python",
-    "text": "Resolución con Python\nPodemos resolver este problema usando OR-Tools:\nfrom ortools.linear_solver import pywraplp\n\n# Crear el solver\nsolver = pywraplp.Solver.CreateSolver('GLOP')\n\n# Variables de decisión\nx = solver.NumVar(0, solver.infinity(), 'x')\ny = solver.NumVar(0, solver.infinity(), 'y')\n\n# Función objetivo: maximizar 3x + 4y\nsolver.Maximize(3*x + 4*y)\n\n# Restricciones\nsolver.Add(x + 2*y &lt;= 14)\nsolver.Add(3*x - y &gt;= 0)\n\n# Resolver\nstatus = solver.Solve()\n\nif status == pywraplp.Solver.OPTIMAL:\n    print(f'Solución óptima encontrada:')\n    print(f'x = {x.solution_value():.2f}')\n    print(f'y = {y.solution_value():.2f}')\n    print(f'Ganancia máxima = ${solver.Objective().Value():.2f}')\nSalida:\nSolución óptima encontrada:\nx = 2.00\ny = 6.00\nGanancia máxima = $30.00"
+    "objectID": "posts/que-es-optimizacion-matematica/index.html#por-qué-importa",
+    "href": "posts/que-es-optimizacion-matematica/index.html#por-qué-importa",
+    "title": "¿Qué es la Optimización Matemática?",
+    "section": "¿Por qué importa?",
+    "text": "¿Por qué importa?\nLa optimización matemática está en todas partes:\n\nLogística: rutas de distribución, localización de almacenes.\nFinanzas: optimización de portafolios, gestión de riesgos.\nEnergía: despacho económico, planificación de generación.\nInteligencia artificial: el entrenamiento de redes neuronales es un problema de optimización no convexa a gran escala.\nIndustria: planificación de producción, cadenas de suministro.\n\nCada vez que un algoritmo de machine learning “aprende”, está resolviendo un problema de optimización."
   },
   {
-    "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html#tipos-de-problemas-de-optimización",
-    "href": "posts/2025-02-08-introduccion-optimizacion/index.html#tipos-de-problemas-de-optimización",
-    "title": "Introducción a la Optimización Matemática",
-    "section": "Tipos de Problemas de Optimización",
-    "text": "Tipos de Problemas de Optimización\nEn este blog exploraremos diferentes tipos:\n\nProgramación Lineal (LP): Función objetivo y restricciones lineales\nProgramación Entera (IP/MIP): Variables que deben ser enteros\nProblemas de Ruteo (VRP): Optimización de rutas de vehículos\nScheduling: Asignación óptima de recursos en el tiempo\nMetaheurísticas: Algoritmos aproximados para problemas complejos"
+    "objectID": "posts/que-es-optimizacion-matematica/index.html#optimización-vs.-programación-matemática",
+    "href": "posts/que-es-optimizacion-matematica/index.html#optimización-vs.-programación-matemática",
+    "title": "¿Qué es la Optimización Matemática?",
+    "section": "¿Optimización vs. Programación Matemática?",
+    "text": "¿Optimización vs. Programación Matemática?\nLos términos se usan de forma intercambiable. “Programación matemática” es el nombre clásico (donde “programación” viene de “planificación”, no de programación de computadoras). “Optimización matemática” es el término más moderno y descriptivo."
   },
   {
-    "objectID": "posts/2025-02-08-introduccion-optimizacion/index.html#próximos-posts",
-    "href": "posts/2025-02-08-introduccion-optimizacion/index.html#próximos-posts",
-    "title": "Introducción a la Optimización Matemática",
-    "section": "Próximos Posts",
-    "text": "Próximos Posts\nEn futuros artículos profundizaré en:\n\nVehicle Routing Problem (VRP) - mi área de investigación\nOptimización de horarios universitarios\nAlgoritmos genéticos y metaheurísticas\nUso avanzado de AMPL y Python\n\n\n¿Tienes preguntas sobre optimización? Escríbeme en GitHub o comenta en el video de YouTube cuando lo publique."
+    "objectID": "posts/que-es-optimizacion-matematica/index.html#conclusión",
+    "href": "posts/que-es-optimizacion-matematica/index.html#conclusión",
+    "title": "¿Qué es la Optimización Matemática?",
+    "section": "Conclusión",
+    "text": "Conclusión\nLa optimización matemática es el puente formal entre un problema del mundo real y su mejor solución posible. Entender su estructura y clasificación es el primer paso para poder modelar y resolver problemas de decisión con rigor.\nEn próximos posts exploraremos problemas específicos, empezando por clásicos como el problema de la mochila."
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Proyectos",
-    "section": "",
-    "text": "Investigación sobre problemas de ruteo de vehículos usando programación entera mixta.\nVer en GitHub\n\n\n\nModelos de programación lineal para asignación de cursos usando AMPL y Python.\n\n\n\nImplementación de Sen’s slope y Mann-Kendall test en R para análisis de datos meteorológicos.\n\nMás proyectos próximamente…"
-  },
-  {
-    "objectID": "projects.html#proyectos-en-github",
-    "href": "projects.html#proyectos-en-github",
-    "title": "Proyectos",
-    "section": "",
-    "text": "Investigación sobre problemas de ruteo de vehículos usando programación entera mixta.\nVer en GitHub\n\n\n\nModelos de programación lineal para asignación de cursos usando AMPL y Python.\n\n\n\nImplementación de Sen’s slope y Mann-Kendall test en R para análisis de datos meteorológicos.\n\nMás proyectos próximamente…"
+    "objectID": "posts/que-es-optimizacion-matematica/index.html#referencias",
+    "href": "posts/que-es-optimizacion-matematica/index.html#referencias",
+    "title": "¿Qué es la Optimización Matemática?",
+    "section": "Referencias",
+    "text": "Referencias\n\nBertsimas, D., & Tsitsiklis, J. N. (1997). Introduction to Linear Optimization. Athena Scientific.\nBoyd, S., & Vandenberghe, L. (2004). Convex Optimization. Cambridge University Press.\nWolsey, L. A. (2020). Integer Programming. Wiley."
   }
 ]
